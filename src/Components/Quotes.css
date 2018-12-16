@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+:root {
+  --black-ish: #1c110a;
+  --white-ish: #e4d6a7;
+  --yellow-ish: #e9b44c;
+  --red-ish: #9b2915;
+  --blue-ish: #50a2a7;
+  --green-ish: #1a9b15;
+}
+
+.body {
+  height: 1vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: var(--yellow-ish);
+}
+.grid-container {
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "quote quote quote"
+    ". author author"
+    "btn . tweet";
+}
+
+.text-container {
+  grid-area: quote;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-ish);
+  margin: 10px 25px 0 30px;
+}
+
+.author-container {
+  grid-area: author;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 35px;
+  color: var(--white-ish);
+  font-family: "Raleway", sans-serif;
+}
+
+.twitter-link-container {
+  grid-area: tweet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-ish);
+  margin: 0 0px 20px 0;
+}
+
+.fab {
+  color: var(--white-ish);
+  font-size: 1.5em;
+}
+
+.new-quote-btn {
+  margin: 0 0 20px 20px;
+  grid-area: btn;
+  background-color: var(--black-ish);
+  color: var(--white-ish);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: bold;
+}
+
+.credit {
+  font-weight: normal;
+  margin-top: 25px;
+}
+
+/*Start color change styles*/
+
+.color-1 {
+  color: var(--white-ish);
+  border-color: var(--white-ish);
+}
+
+.color-2 {
+  color: var(--yellow-ish);
+  border-color: var(--yellow-ish);
+}
+
+.color-3 {
+  color: var(--red-ish);
+  border-color: var(--red-ish);
+}
+
+.color-4 {
+  color: var(--blue-ish);
+  border-color: var(--blue-ish);
+}
+
+.color-5 {
+  color: var(--green-ish);
+  border-color: var(--green-ish);
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    margin-top: 125px;
+    max-width: 650px;
+  }
+}

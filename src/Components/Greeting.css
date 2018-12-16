@@ -1,0 +1,15 @@
+.greeting {
+  /* fonts */
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 25px #000;
+  /*position*/
+  text-align: center;
+  margin: 0px !important;
+  grid-gap: 10px;
+}
+
+.helloThere {
+  margin: 0 !important;
+}

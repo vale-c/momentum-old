@@ -1,32 +1,29 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* =============================== MAIN BODY =============================== */
+body, html {
+  height: 100%;
+  overflow: hidden; /*hide scrollbar*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* Let's center and scale the image nicely */
+  background-image: url('https://source.unsplash.com/category/nature/1920x1080');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* fonts */
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

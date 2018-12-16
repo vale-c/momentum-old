@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+.clockBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.clockHours,
+.clockMinutes,
+.clockSeconds,
+.clockAmOrPm
+{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  /* fonts */
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  font-size: 4em;
+  color: #fff;
+  margin: 0.2em;
+  text-shadow: 0 0 25px #000;
+}
+
+h1.am-pm {
+  margin-top: 7.5rem;
+  font-size: 1.3em;
+}
