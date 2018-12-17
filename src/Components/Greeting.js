@@ -2,7 +2,7 @@ import React from 'react';
 import './Greeting.css';
 import {Grid, Row, Col} from 'react-bootstrap';
 
-function getRandom(items) {
+function getRandom(items) { //pick a random name from the nameData list at the bottom of the Greeting component
   return items[Math.floor(Math.random()*items.length)];
 }
 
@@ -33,15 +33,15 @@ class Greeting extends React.Component {
   };
 
 	render() {
-    const { firstName } = this.state;
-    let time = new Date().getHours();
+    const { firstName } = this.state; //set the first name to access it
+
+    let time = new Date().getHours(); //get precise time
 
 		return <Grid>
 			<Row className="greeting">
         <Col xs={6} md={3}>
-          <h3 className="helloThere">Good {time<12 ? 'Morning' : time<18 ? 'Afternoon' : 'Evening'} {firstName} </h3>
+          <h3 className="hello">Good {time<12 ? 'Morning' : time<18 ? 'Afternoon' : time < 22 ? 'Evening' : 'Night'} {firstName} </h3>
         </Col>
-
       </Row>
 		</Grid>;
 	}
@@ -73,7 +73,6 @@ const nameData = {
     "Good Looking",
     "Classy",
     "Miss",
-    "Human Shield",
     "Emperor",
     "King",
     "Queen",
@@ -81,11 +80,12 @@ const nameData = {
     "Cauliflower",
     "Bananarama",
     "Sweet Potato",
-    "Dark Lord",
+    "Ray Of Light",
     "Barbie",
-    "Vampire",
+    "Jacket Potato",
     "Sunflower",
-    "Flower"
+    "Flower",
+    "Pretzel"
 	]}
 
 

@@ -2,14 +2,11 @@
   /* fonts */
   font-family: 'Josefin Sans', 'Arial', sans-serif;
   font-size: 3em;
-  color: #fff;
+  opacity: 1;
   text-shadow: 0 0 25px #000;
-  /*position*/
-  text-align: center;
-  margin: 0px !important;
-  grid-gap: 10px;
 }
 
-.helloThere {
+.hello {
+  text-align: center;
   margin: 0 !important;
 }
