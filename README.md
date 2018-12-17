@@ -1,3 +1,5 @@
-## A React js app inspired by https://momentumdash.com/
+## A React Web App inspired by https://momentumdash.com/
+
+### Still WIP ⚠️
 
 ![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot.png)
