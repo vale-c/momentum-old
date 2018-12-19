@@ -69,7 +69,7 @@ const nameData = {
     "Sunshine",
     "Baaaaaaby",
     "Honeybunch",
-    "Yoooouhoooo",
+    "Rockstar",
     "Good Looking",
     "Classy",
     "Miss",
