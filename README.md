@@ -12,4 +12,4 @@
 ![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot.png)
 
 ####WP2
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screen_2.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screen-2.png)
