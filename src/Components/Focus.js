@@ -14,7 +14,6 @@ class Focus extends React.Component {
 
 
   render() {
-
       const textNode = {
         borderBottomColor: 'rgba(0, 0, 0, 0)'
       }
@@ -28,13 +27,12 @@ class Focus extends React.Component {
       return (
       <section className="focus-section">
         <form className="focus">
-          <label for="focus-input" className="focus ask-focus">
-            <ffn className="_ffn_textNode" data-ffn-css-id="1" style={textNode}>What is your main focus for today?</ffn>
+          <label className="focus ask-focus">
+            <div className="textNode" style={textNode}>What is your main focus for today?</div>
           </label>
-          <input id="focus-input" className="focus" type="text" autofocus="" style={inputStyle}/>
-            </form>
-          <div className="focus focus-list" style={focusList} >
-          </div>
+          <input id="focus-input" className="focus" type="text" autoFocus="" style={inputStyle}/>
+        </form>
+        <div className="focus focus-list" style={focusList}></div>
       </section>
     );
   }

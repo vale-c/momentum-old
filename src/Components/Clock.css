@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex: 1;
+  text-align: center;
+  justify-content: center;
 }
 
 .clockHours,
@@ -12,14 +15,14 @@
 .clockAmOrPm
 {
   display: flex;
-  flex: 1;
-  justify-content: center;
-  text-align: center;
+  flex-flow: wrap;
+
+  margin: 0 0.1rem -2.5em 0.1rem;
+
   /* fonts */
+  color: #fff;
   font-family: 'Josefin Sans', 'Arial', sans-serif;
   font-size: 4em;
-  color: #fff;
-  margin: 3em 0 -85px 10px;
   text-shadow: 0 0 25px #000;
 }
 

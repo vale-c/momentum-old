@@ -1,77 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.grid-container {
+.container {
   width: 100%;
-  margin-top: 50px;
-  display: grid;
-  text-shadow: 0 0 25px rgba(0,0,0,0.3);
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3fr 1fr 1fr;
-  grid-gap: 10px;
-  grid-template-areas:
-    "quote quote quote"
-    ". author author"
-    "btn . tweet";
-  font-size: 1.3em;
-  text-shadow: 0 0 25px rgba(0,0,0,0.3);
+  height: 100%;
+  margin-top: 1rem;
+  padding: 10vh 20px 0;
 }
 
-.text-container {
-  grid-area: quote;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1em;
-  text-shadow: 0 0 25px rgba(0,0,0,0.3);
-  line-height: 150%;
-}
-
-.author-container {
-  grid-area: author;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 35px;
+.wrapper {
+  /*position to center bottom like a footer*/
+  position:absolute;
+  width:720px;
+  height:23%;
+  bottom:0px;
+  right:25%;
+  left:50%;
+  margin-left:-360px;
+/*font customization*/
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 0.8em;
-  text-shadow: 0 0 25px rgba(0,0,0,0.3);
+  font-size: 1.2em;
+  line-height: 120%;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 0 0 25px #000;
 }
 
-.twitter-link-container {
-  grid-area: tweet;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0px 20px 0;
+.refresh-btn {
+  background-color: rgba(218, 223, 225, 1);
+  color: rgba(46, 49, 49, 1);
+  border: 1px solid rgba(46, 49, 49, 1);
+  border-radius: 5px;
+  margin: 25px 0 20 auto;
 }
-
-.fab {
-  font-size: 1.5em;
+.fa-twitter {
+  margin-top: 1.5em;
+  margin-right: 0.5em;
+  color: rgba(107, 185, 240, 1);
 }
-
-.new-quote-btn {
-  margin: 0 0 20px 20px;
-  grid-area: btn;
-  font-weight: bold;
-}
-
-.credit {
-  font-weight: normal;
-  margin-top: 25px;
-}
-
-
-@media screen and (min-width: 768px) {
-  .grid-container {
-    margin-top: 125px;
-    max-width: 500px;
-  }
+.fa-facebook-square {
+  margin-top: 1.5em;
+  color:rgba(31, 58, 147, 1);
 }

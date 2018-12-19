@@ -22,7 +22,7 @@ class App extends Component {
       <div className="App">
         <Clock/>
         <Greeting/>
-        <Focus/>
+
         <Quotes/>
       </div>
     );
