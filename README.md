@@ -9,7 +9,10 @@
 ### Still WIP ⚠️
 
 ####WP1
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-1.png)
 
 ####WP2
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screen-2.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-2.png)
+
+####WP3
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-3.png)

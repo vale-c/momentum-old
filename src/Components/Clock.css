@@ -22,12 +22,13 @@
   /* fonts */
   color: #fff;
   font-family: 'Josefin Sans', 'Arial', sans-serif;
-  font-size: 4em;
+  font-size: 6em;
   text-shadow: 0 0 25px #000;
 }
 
 h1.am-pm {
-  margin-top: 7.5rem;
+  margin-left: 0.3rem;
+  margin-top: 11.3rem;
   font-size: 1.3em;
 }
 

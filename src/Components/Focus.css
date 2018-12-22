@@ -1,18 +1,9 @@
-.focus-section {
-  margin: 1em 0;
-}
-
 .focus {
   color: white;
   text-align: center;
   display: inline-block;
   width: 720px;
   text-shadow: 0 0 25px #000;
-}
-
-.ask-focus {
-  font-size: 2em;
-  margin-bottom: 0.5em;
 }
 
 #focus-input {
