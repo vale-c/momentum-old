@@ -2,9 +2,6 @@ import React from 'react';
 import './Quotes.css';
 import axios from 'axios';
 
-
-//http://quotes.rest/qod.json?category=inspire
-
 class Quotes extends React.Component {
   constructor(props) {
     super(props);
@@ -22,18 +19,19 @@ class Quotes extends React.Component {
 
   getQuote = () => {
     axios
-      .get('https://talaikis.com/api/quotes/random//')
+      .get('http://quotes.rest/qod.json?category=inspire')
       .then(response => {
         this.setState({
-          quote: response.data.quote,
-          author: response.data.author
+          quote: response.data.contents.quotes[0].quote,
+          author: response.data.contents.quotes[0].author
         });
       })
       .catch(error => {
         console.log(error);
       });
-      // console.log(this.state.author);
-      // console.log(this.state.quote);
+ 
+       console.log("Author:" + this.state.author);
+       console.log("Quote:"+   this.state.quote);
   }
 
   handleTweetClick() {
@@ -69,14 +67,14 @@ class Quotes extends React.Component {
         <a
           onClick={this.handleTweetClick}
           target="_blank"
-          href=""
+          href="#"
           rel="noopener noreferrer">
           <i className="fab fa-twitter"></i>
         </a>
         <a
         onClick={this.handleFacebookClick}
           target="_blank"
-          href=""
+          href = "#"
           rel="noopener noreferrer">
           <i className="fab fa-facebook-square"></i>
         </a>
