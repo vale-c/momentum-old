@@ -9,13 +9,13 @@
 ### Still WIP ⚠️
 
 ####WP1
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-1.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-1.jpg)
 
 ####WP2
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-2.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-2.jpg)
 
 ####WP3
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-3.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-3.jpg)
 
 ####WP4
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/screenshot-4.png)
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-4.jpg)
