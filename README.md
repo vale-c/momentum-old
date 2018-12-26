@@ -2,7 +2,9 @@
 
 - [x] Bootstrapped using "Create React App".
 - [x] Unsplash API to fetch an awesome wallpaper for every refresh.
-- [x] Talaikis API to get random interesting Quotes every time.
+- [x] Forismatic API integration to get random interesting Quotes every time.
+- [x] IpData API to get precise Geolocation.
+- [x] DarkSky API integration to get accurate Weather Data.
 - [x] Modulararized Architecture using Components.
 
 
