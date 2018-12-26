@@ -19,11 +19,11 @@ class Quotes extends React.Component {
 
   getQuote = () => {
     axios
-      .get('http://quotes.rest/qod.json?category=inspire')
+      .get('https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en')
       .then(response => {
         this.setState({
-          quote: response.data.contents.quotes[0].quote,
-          author: response.data.contents.quotes[0].author
+          quote: response.data.quoteText,
+          author: response.data.quoteAuthor
         });
       })
       .catch(error => {
