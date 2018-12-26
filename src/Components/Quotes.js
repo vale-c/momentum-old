@@ -29,9 +29,8 @@ class Quotes extends React.Component {
       .catch(error => {
         console.log(error);
       });
- 
-       console.log("Author:" + this.state.author);
-       console.log("Quote:"+   this.state.quote);
+       //console.log("Author:" + this.state.author);
+       //console.log("Quote:"+   this.state.quote);
   }
 
   handleTweetClick() {

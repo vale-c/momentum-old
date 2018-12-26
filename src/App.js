@@ -3,6 +3,7 @@ import Clock from './Components/Clock';
 import Greeting from './Components/Greeting';
 import Quotes from './Components/Quotes';
 import Focus from './Components/Focus';
+import Weather from './Components/Weather';
 import './App.css';
 
 
@@ -18,6 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Weather />
         <Clock/>
         <Greeting/>
         <Quotes/>
