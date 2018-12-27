@@ -8,9 +8,21 @@ class Quotes extends React.Component {
     this.state = {
       quote: '',
       author: '',
+      isHovering: false
     };
     this.handleTweetClick = this.handleTweetClick.bind(this);
     this.handleFacebookClick = this.handleFacebookClick.bind(this);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+  }
+
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
   }
 
   componentDidMount() {
@@ -29,8 +41,8 @@ class Quotes extends React.Component {
       .catch(error => {
         console.log(error);
       });
-       //console.log("Author:" + this.state.author);
-       //console.log("Quote:"+   this.state.quote);
+      console.log("Author:" + this.state.author);
+      console.log("Quote:"+   this.state.quote);
   }
 
   handleTweetClick() {
@@ -38,7 +50,7 @@ class Quotes extends React.Component {
   }
 
   handleFacebookClick() {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=valentinacalabrese.com&quote=${this.state.quote}${this.state.author}"`)
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=valentinacalabrese.com&quote=${this.state.quote}${this.state.author}`)
   }
 
   render() {

@@ -14,7 +14,6 @@ class Weather extends React.Component {
       description: "",
       windSpeed: ""
     };
-
     this.getLocation = this.getLocation.bind(this);
     this.getWeatherData = this.getWeatherData.bind(this);
   }
@@ -22,7 +21,7 @@ class Weather extends React.Component {
 
   getLocation = () => {
       axios
-        .get("https://ipinfo.io/json")
+        .get("http://ip.zxq.co/") //awesome API to get Geolocation with no rate limit!!
         //https://api.ipdata.co/?api-key=036623005d047344581751a318e8869d09652e6c031e7d2be99e7e74 --> REACHED LIMIT OF API CALLS FOR THIS KEY!!!
         .then(response => {
           this.setState({
@@ -72,13 +71,14 @@ class Weather extends React.Component {
     const WeatherData = ({ city, region, country, temp, description, id }) => 
       <div>
           <h4 className="location"> {city} </h4>
-          <h4 className="country_and_flag"> {region} {country}  </h4>
+          <h4 className="country_and_flag"> {region}, {country}  </h4>
           <i id='icon' className={'wi wi-owm-' + tod + '-' + id}></i>
-          <h3 className="temp-desc"> {temp} °, {description} </h3>
+          <h3 className="desc"> {description} </h3>
+          <h2 className="temp"> {temp}°</h2>
          {/*  <h5 className="wind">Wind Speed: {wind} km/h </h5>   */}
       </div>;
     
-    return <div className="container">
+    return <div className="card">
       <div className="weatherWrapper">
         <WeatherData city={city} region={region} country={country}
                      /* from OpenWeatherMap API CALL */

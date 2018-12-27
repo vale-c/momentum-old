@@ -27,3 +27,10 @@
 
 ####WP6
 ![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-6.jpg)
+
+####WP7
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-7.jpg)
+
+####WP8
+![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-8.jpg)
+

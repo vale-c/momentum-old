@@ -20,7 +20,7 @@ body{
   -ms-flex-pack: center;
   justify-content: center;
   /* Let's center and scale the image nicely */
-  background-image: url('https://source.unsplash.com/category/landscape/1920x1080');
+  background-image: url('https://source.unsplash.com/category/nature/1920x1080');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

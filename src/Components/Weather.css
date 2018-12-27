@@ -1,10 +1,11 @@
-.container {
+.card {
     position: relative;
+    width: 100vw;
 }
 .weatherWrapper {
     position: absolute;
-    top: 0;
-    right: -50%;
+    top: -7rem;
+    right: 2rem;
     text-align: center;
 }
 
