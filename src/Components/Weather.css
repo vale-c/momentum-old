@@ -1,8 +1,17 @@
 .container {
     position: relative;
 }
-.weather-wrapper {
+.weatherWrapper {
     position: absolute;
     top: 0;
     right:-10rem;
+}
+
+#icon {
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    text-align: justify;
+    font-size: 2em;
+    padding: 0.3em;
 }
