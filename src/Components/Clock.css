@@ -34,52 +34,27 @@ h1.am-pm {
 
 
 /* Media Queries for properly resizing the Clock Component*/
-@media screen and (max-width:320px) {
-  .countDownTitle {
-    font-size: 2em;
-    letter-spacing: 1rem;
-  }
-  .clockHours,
-  .clockMinutes,
-  .clockSeconds,
-  .clockAmOrPm, .am-pm {
-    display: flex;
-    flex: 1;
-    text-align: center;
-    font-size: 1em;
-    margin: 1rem auto;
-  }
-  .deadlineInput {
-    margin: 30px auto;
-    width: 75vw;
-    font-size: 1rem;
-    padding: 20px auto;
-    text-align: center;
-  }
-}
+
 @media screen and (min-width:321px) and (max-width:639px) {
-  html {
-    height: 100%;
-  }
   .clockHours,
   .clockMinutes,
   .clockSeconds,
   .clockAmOrPm {
     display: flex;
+    letter-spacing: 0.2em;
+    text-align: center;
+    font-size: 3em;
     flex: 1;
-    text-align: center;
-    font-size: 1em;
-    margin: 2rem;
+    margin: 0.5rem auto;
   }
-  .deadlineInput {
-    margin: 30px auto;
-    width: 75vw;
-    font-size: 1.7rem;
-    padding: 20px auto;
-    text-align: center;
+  .am-pm {
+    margin-left: 0.6em;
+    margin-top: 5rem;
+    font-size: 1.5em;
   }
 
 }
+
 @media screen and (min-width:640px) and (max-width:959px) {
 
   .clockHours,
@@ -91,13 +66,7 @@ h1.am-pm {
     text-align: center;
     font-size: 1em;
     margin: 1rem auto;
-  }
-  .deadlineInput {
-    margin: 30px auto;
-    width: 75vw;
-    font-size: 1.5rem;
-    padding: 20px auto;
-    text-align: center;
+    padding-bottom: 2rem;
   }
 
 }

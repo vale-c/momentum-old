@@ -4,14 +4,15 @@
 .weatherWrapper {
     position: absolute;
     top: 0;
-    right:-10rem;
+    right: -50%;
+    text-align: center;
 }
 
 #icon {
     color: #fff;
     display: inline-block;
     width: 100%;
-    text-align: justify;
-    font-size: 2em;
-    padding: 0.3em;
+    text-align: center;
+    font-size: 3em;
+    padding: 0.2em;
 }

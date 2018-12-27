@@ -3,8 +3,8 @@
 - [x] Bootstrapped using "Create React App".
 - [x] Unsplash API to fetch an awesome wallpaper for every refresh.
 - [x] Forismatic API integration to get random interesting Quotes every time.
-- [x] IpData API to get precise Geolocation.
-- [x] DarkSky API integration to get accurate Weather Data.
+- [x] IpInfo.io API to get precise Geolocation.
+- [x] OpenWeather API integration to get accurate Weather Data every time.
 - [x] Modulararized Architecture using Components.
 
 
@@ -27,6 +27,3 @@
 
 ####WP6
 ![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-6.jpg)
-
-####WP7
-![alt text](https://raw.githubusercontent.com/vale-c/momentum/master/JPEG/screenshot-7.jpg)
