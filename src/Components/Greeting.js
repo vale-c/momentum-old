@@ -53,7 +53,8 @@ const nameData = {
     "Sweetheart",
     "Mate",
     "Bro",
-    "Wizard",
+    "Mama",
+    "Wiz",
     "Cutie",
     "Alien",
     "Human",
@@ -67,25 +68,21 @@ const nameData = {
     "Smarty Pants",
     "Cookie",
     "Sunshine",
-    "Baaaaaaby",
+    "Baby",
     "Honeybunch",
     "Rockstar",
     "Good Looking",
     "Classy",
     "Miss",
     "Emperor",
-    "King",
-    "Queen",
     "Ace",
     "Cauliflower",
     "Bananarama",
-    "Sweet Potato",
+    "Sweetie",
     "Ray Of Light",
-    "Barbie",
-    "Jacket Potato",
     "Sunflower",
     "Flower",
-    "Pretzel"
+    "Precious"
 	]}
 
 

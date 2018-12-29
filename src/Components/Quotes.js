@@ -6,8 +6,8 @@ class Quotes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quote: '',
-      author: '',
+      quote: "",
+      author: "",
       isHovering: false
     };
     this.handleTweetClick = this.handleTweetClick.bind(this);
@@ -15,13 +15,14 @@ class Quotes extends React.Component {
     this.handleMouseHover = this.handleMouseHover.bind(this);
   }
 
+
   handleMouseHover() {
     this.setState(this.toggleHoverState);
   }
 
   toggleHoverState(state) {
     return {
-      isHovering: !state.isHovering,
+      isHovering: !state.isHovering
     };
   }
 
@@ -31,7 +32,9 @@ class Quotes extends React.Component {
 
   getQuote = () => {
     axios
-      .get('https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en')
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
+      )
       .then(response => {
         this.setState({
           quote: response.data.quoteText,
@@ -41,16 +44,24 @@ class Quotes extends React.Component {
       .catch(error => {
         console.log(error);
       });
-      console.log("Author:" + this.state.author);
-      console.log("Quote:"+   this.state.quote);
-  }
+    console.log("Author:" + this.state.author);
+    console.log("Quote:" + this.state.quote);
+  };
 
   handleTweetClick() {
-    window.open(`https://twitter.com/intent/tweet?text="${this.state.quote} ${this.state.author}"`)
+    window.open(
+      `https://twitter.com/intent/tweet?text="${this.state.quote} ${
+        this.state.author
+      }"`
+    );
   }
 
   handleFacebookClick() {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=valentinacalabrese.com&quote=${this.state.quote}${this.state.author}`)
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=valentinacalabrese.com&quote=${
+        this.state.quote
+      }${this.state.author}`
+    );
   }
 
   render() {
@@ -64,12 +75,8 @@ class Quotes extends React.Component {
     );
 
     const Button = ({ onClick }) => (
-      <button
-        type="button"
-        className="refresh-btn"
-        onClick={onClick}
-      >
-      <i className="fas fa-sync-alt"></i>
+      <button type="button" className="refresh-btn" onClick={onClick}>
+        <i className="fas fa-sync-alt" />
       </button>
     );
 
@@ -79,32 +86,31 @@ class Quotes extends React.Component {
           onClick={this.handleTweetClick}
           target="_blank"
           href="#"
-          rel="noopener noreferrer">
-          <i className="fab fa-twitter"></i>
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-twitter" />
         </a>
         <a
-        onClick={this.handleFacebookClick}
+          onClick={this.handleFacebookClick}
           target="_blank"
-          href = "#"
-          rel="noopener noreferrer">
-          <i className="fab fa-facebook-square"></i>
+          href="#"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-facebook-square" />
         </a>
-    </div>
-    );
-
-
-    return (
-      <div className="container">
-        <div className="wrapper">
-          <QuoteText
-            quote={quote}
-            author={author}
-          />
-          <Button onClick={this.getQuote} />
-          <Social />
-        </div>
       </div>
     );
+
+    return <div className="container">
+        <div className="quoteWrapper" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
+          <QuoteText quote={quote} author={author} />
+          <Button onClick={this.getQuote} />
+          {
+            this.state.isHovering && 
+            <Social />
+          }
+        </div>
+      </div>;
   }
 }
 
