@@ -1,32 +1,39 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* =============================== MAIN BODY =============================== */
+
 html {
-  height: 100%;
+    height: 100%;
 }
 
-body{
-  height: 100%;
-  min-height: 100%;
-  margin: 0;
-  overflow: hidden; /*hide scrollbar*/
-  /*Positioning*/
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  /* Let's center and scale the image nicely */
-  background-image: url('https://source.unsplash.com/category/nature/1920x1080');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* fonts */
-  font-family: 'Josefin Sans', 'Arial', sans-serif;
-  color: #fff;
-  text-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /*hide scrollbar*/
+    /*Positioning*/
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /* Let's center and scale the image nicely */
+    background: 
+      linear-gradient(
+     rgba(255, 255, 255, 0.35), 
+     rgba(255, 255, 255, 0.45)
+    ),
+     url('https://source.unsplash.com/category/nature/1920x1080');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    /* fonts */
+    font-family: 'Josefin Sans', 'Arial', sans-serif;
+    color: #fff;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
-

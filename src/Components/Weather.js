@@ -3,7 +3,8 @@ import React from 'react';
 import './Weather.css';
 
 const CORS_HEADER = "https://cors-anywhere.herokuapp.com/";
-//const DARKSKY_API_CALL = "https://api.darksky.net/forecast/640bddbf1aa37eddd8253e47a46a46a8/";
+// const DARKSKY_API_CALL = "https://api.darksky.net/forecast/640bddbf1aa37eddd8253e47a46a46a8/";
+// const Google_Geo = "AIzaSyC1TaAGpiy3G-ICOu0j7MCWAjVdeZACpAo";
 
 class Weather extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Weather extends React.Component {
       city: "",
       temp: "",
       description: "",
-      windSpeed: ""
+      windSpeed: "",
+      humidity: ""
     };
     this.getLocation = this.getLocation.bind(this);
     this.getWeatherData = this.getWeatherData.bind(this);
@@ -48,6 +50,7 @@ class Weather extends React.Component {
           temp: response.data.main.temp,
           description: response.data.weather[0].main,
           id: response.data.weather[0].id,
+          humidity: response.data.main.humidity,
           wind: response.data.wind.speed
         });
       })
@@ -66,16 +69,16 @@ class Weather extends React.Component {
     let hr = new Date().getHours();
     let tod = hr >= 17 ? "night" : "day";
     
-    const { city, region, country,  temp, description, id, wind } = this.state;
+    const { city, region, country,  temp, description, id, wind, humidity } = this.state;
 
-    const WeatherData = ({ city, region, country, temp, description, id }) => 
+    const WeatherData = ({ city, region, country, temp, description, id, humidity }) => 
       <div>
           <h4 className="location"> {city} </h4>
-          <h4 className="country_and_flag"> {region}, {country}  </h4>
+          <h4 className="region-contry"> {region}, {country}  </h4>
           <i id='icon' className={'wi wi-owm-' + tod + '-' + id}></i>
           <h3 className="desc"> {description} </h3>
           <h2 className="temp"> {temp}°</h2>
-         {/*  <h5 className="wind">Wind Speed: {wind} km/h </h5>   */}
+          <h5 className="humidity">Humidity: {humidity}%</h5>   
       </div>;
     
     return <div className="card">
@@ -86,6 +89,7 @@ class Weather extends React.Component {
                      description={description}
                      id={id}
                      wind={wind}
+                     humidity={humidity}
         />
         </div>
       </div>;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Clock from './Components/Clock';
-import Weather from "./Components/Weather";
+import Weather from "./Components/Weather.js";
 import Greeting from './Components/Greeting';
 import Focus from "./Components/Focus";
 import Quotes from './Components/Quotes';
@@ -22,7 +22,7 @@ class App extends Component {
         <Weather />
         <Clock/>
         <Greeting/>
-     
+        <Focus/>
         <Quotes/>
       </div>
     );

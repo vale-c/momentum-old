@@ -2,6 +2,7 @@ import React from 'react';
 import './Quotes.css';
 import axios from 'axios';
 
+
 class Quotes extends React.Component {
   constructor(props) {
     super(props);
@@ -44,8 +45,6 @@ class Quotes extends React.Component {
       .catch(error => {
         console.log(error);
       });
-    console.log("Author:" + this.state.author);
-    console.log("Quote:" + this.state.quote);
   };
 
   handleTweetClick() {
@@ -74,11 +73,9 @@ class Quotes extends React.Component {
       </div>
     );
 
-    const Button = ({ onClick }) => (
-      <button type="button" className="refresh-btn" onClick={onClick}>
+    const Button = ({ onClick }) => <button className="refresh-btn animated rubberBand delay-2s" onClick={onClick}>
         <i className="fas fa-sync-alt" />
-      </button>
-    );
+      </button>;
 
     const Social = () => (
       <div className="social">

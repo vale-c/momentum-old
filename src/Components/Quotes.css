@@ -10,11 +10,11 @@
 .quoteWrapper {
   /*position to center bottom like a footer*/
   position:absolute;
-  width:720px;
+  width: 720px;
   /*height:calc(100%-3em);*/
-  bottom:10px;
-  right:25%;
-  left:50%;
+  bottom: 0.5em;
+  right: 25%;
+  left: 50%;
   margin-left:-360px;
 /*font customization*/
   font-family: 'Josefin Sans', sans-serif;
@@ -28,15 +28,22 @@
 .refresh-btn {
   background-color: rgba(218, 223, 225, 1);
   color: rgba(46, 49, 49, 1);
-  border: 1px solid rgba(46, 49, 49, 1);
-  border-radius: 5px;
+  border: 1px solid rgb(179, 185, 187);
+  border-radius: 6px;
   margin: 0 auto;
+  padding: 4px 15px;
 }
+
+.refresh-btn:hover {
+  background-color: rgba(46, 49, 49, 1);
+  color: rgba(218, 223, 225, 1);
+}
+
 
 .fa-twitter {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  margin-right: 0.5em;
+  margin-right: 1em;
   color: rgba(107, 185, 240, 1);
 }
 

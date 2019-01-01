@@ -3,11 +3,10 @@
   font-family: 'Josefin Sans', 'Arial', sans-serif;
   font-size: 3em;
   text-shadow: 0 0 15px #000;
-  margin: 0 !important;
 }
 
 .hello {
   text-align: center;
   margin: 0 !important;
-  padding-bottom: 3em;
+  padding-bottom: 6rem;
 }
