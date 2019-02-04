@@ -14,6 +14,7 @@ body {
     margin: 0;
     overflow: hidden;
     /*hide scrollbar*/
+    
     /*Positioning*/
     display: -ms-flexbox;
     display: flex;
@@ -24,10 +25,10 @@ body {
     /* Let's center and scale the image nicely */
     background: 
       linear-gradient(
-     rgba(255, 255, 255, 0.35), 
-     rgba(255, 255, 255, 0.45)
+     rgba(255, 255, 255, 0.03), 
+     rgba(66, 65, 65, 0.15)
     ),
-     url('https://source.unsplash.com/category/nature/1920x1080');
+     url('https://source.unsplash.com/category/landscape/1920x1080');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

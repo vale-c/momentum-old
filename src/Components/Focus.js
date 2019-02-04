@@ -45,23 +45,24 @@ class Focus extends React.Component {
     this.setState({ list: updatedList });
   }
 
+
   render() {
     return <div className="focusSection">
         <SimpleStorage parent={this} />
         <div className="focusInner">
-          <h1 className="askFocus">What is your main focus for today?</h1>
+          <h1 className="askFocus">What are your main goals for today?</h1>
           <input className="focusInput" type="text" 
                 placeholder="" value={this.state.newItem} 
                 onChange={e => this.updateInput("newItem", e.target.value)} />
-          <button onClick={() => this.addItem()} disabled={!this.state.newItem.length}>
-            &#43;
+        <button className="addItem animated bounce delay-2s" onClick={() => this.addItem()} disabled={!this.state.newItem.length}>
+            +
           </button>
          
           <ul className="focusResult">
             {this.state.list.map(item => {
-              return <li className="singleItem" key={item.id}>
+              return <li className="singleListItem" key={item.id}>
                   {item.value}
-                  <button className="itemButton" onClick={() => this.deleteItem(item.id)}>
+                  <button className="deleteItem" onClick={() => this.deleteItem(item.id)}>
                     X
                   </button>
                 </li>;
