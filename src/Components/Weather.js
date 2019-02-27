@@ -23,7 +23,7 @@ class Weather extends React.Component {
 
   getLocation = () => {
       axios
-        .get("http://ip.zxq.co/") //awesome API to get Geolocation with no rate limit!!
+        .get("https://ip.zxq.co/") //awesome API to get Geolocation with no rate limit!!
         //https://api.ipdata.co/?api-key=036623005d047344581751a318e8869d09652e6c031e7d2be99e7e74 --> REACHED LIMIT OF API CALLS FOR THIS KEY!!!
         .then(response => {
           this.setState({
