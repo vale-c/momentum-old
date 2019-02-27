@@ -10,6 +10,9 @@
 
 ### WIP ⚠️
 
+####WP12
+![alt text](https://github.com/vale-c/Momentum/blob/master/assets/screen12.jpg)
+
 ####WP11
 ![alt text](https://github.com/vale-c/Momentum/blob/master/assets/screen11.jpg)
 
@@ -17,11 +20,7 @@
 ![alt text](https://github.com/vale-c/Momentum/blob/master/assets/screen-9.jpg)
 
 ####WP9
-<<<<<<< HEAD
-![gif](https://github.com/vale-c/Momentum/blob/master/assets/kapture.gif)
-=======
 ![alt text](https://github.com/vale-c/Momentum/blob/master/assets/kapture.gif)
->>>>>>> babe8a134fa44e7c7c3c8cbc04815ef58a256407
 
 ####WP8
 ![alt text](https://github.com/vale-c/Momentum/blob/master/assets/screen-8.jpg)
