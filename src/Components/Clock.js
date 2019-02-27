@@ -33,7 +33,7 @@ class Clock extends React.Component {
 					<Col className="clockMinutes">
 					  <h1>{(m < 10 ? '0' + m : m)}</h1>
 					</Col>
-				{/* 	<Col className="clockSeconds">
+				  {/* <Col className="clockSeconds">
 					  <h1>{(s < 10 ? '0' + s : s)}</h1>
 					</Col> */}
 					<Col className="clockAmOrPm">
