@@ -10,9 +10,8 @@
 
 ### WIP ⚠️
 
-####WP13
 ### Temporarily Removed Focus Area to enhance the overall UI.
-![alt text](https://github.com/vale-c/Momentum/blob/master/assets/new-screen.jpg)
+![alt text](https://github.com/vale-c/Momentum/blob/master/assets/new-screen.png)
 
 ####WP12
 ![alt text](https://github.com/vale-c/Momentum/blob/master/assets/screen12.jpg)
