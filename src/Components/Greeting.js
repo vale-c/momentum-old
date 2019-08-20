@@ -38,9 +38,9 @@ class Greeting extends React.Component {
     let time = new Date().getHours(); //get precise time
 
 		return <Grid>
-			<Row className="greeting">
+			<Row className="greetingTextWrapper">
         <Col xs={6} md={3}>
-          <h3 className="hello">Good {time<12 ? 'Morning' : time<18 ? 'Afternoon' : time < 22 ? 'Evening' : 'Night'} {firstName} </h3>
+          <h3 className="greetingText">Good {time<12 ? 'Morning' : time<18 ? 'Afternoon' : time < 22 ? 'Evening' : 'Night'} {firstName} </h3>
         </Col>
       </Row>
 		</Grid>;

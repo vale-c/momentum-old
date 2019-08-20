@@ -1,36 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-.container {
-  width: 100%;
-  height: 100%;
-  margin-top: 1.5rem;
-  padding: 10vh 20px 0;
+.quoteContainer {
+  margin: 0 auto;
 }
 
 .quoteWrapper {
-  /*position to center bottom like a footer*/
-  position:absolute;
-  width: 720px;
-  /*height:calc(100%-3em);*/
-  bottom: 0.5em;
-  right: 25%;
+  position: fixed;
   left: 50%;
-  margin-left:-360px;
+  bottom: -50px;
+  transform: translate(-50%, -50%);
+
 /*font customization*/
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.2em;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
   text-shadow: 0 0 25px #000;
 }
-
 
 .refresh-btn {
   background-color: rgba(218, 223, 225, 1);
   color: rgba(46, 49, 49, 1);
   border: 1px solid rgb(179, 185, 187);
-  border-radius: 6px;
-  margin: 0 auto;
+  border-radius: 5px;
   padding: 4px 15px;
 }
 
@@ -39,16 +31,13 @@
   color: rgba(218, 223, 225, 1);
 }
 
-
 .fa-twitter {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-right: 1em;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
   color: rgba(107, 185, 240, 1);
 }
 
 .fa-facebook-square {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.5rem;
   color:rgba(31, 58, 147, 1);
 }

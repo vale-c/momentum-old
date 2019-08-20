@@ -23,7 +23,6 @@ class Clock extends React.Component {
 	render() {
 		const h = this.state.time.getHours()
 		const m = this.state.time.getMinutes()
-		const s = this.state.time.getSeconds()
 
 		return <Grid>
 				<Row className="clockBox">

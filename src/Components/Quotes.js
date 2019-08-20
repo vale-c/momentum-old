@@ -98,7 +98,7 @@ class Quotes extends React.Component {
       </div>
     );
 
-    return <div className="container">
+    return <div className="quoteContainer">
         <div className="quoteWrapper" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
           <QuoteText quote={quote} author={author} />
           <Button onClick={this.getQuote} />

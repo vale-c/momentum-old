@@ -16,11 +16,8 @@ body {
     /*hide scrollbar*/
     
     /*Positioning*/
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
     justify-content: center;
     /* Let's center and scale the image nicely */
     background: 

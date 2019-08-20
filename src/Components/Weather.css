@@ -1,12 +1,8 @@
-.card {
-    position: relative;
-    width: 100vw;
-}
 .weatherWrapper {
     position: absolute;
-    top: -9rem;
-    right: 2.5rem;
+    right: 0.5rem;
     text-align: center;
+    top: 0;
 }
 
 #icon {
@@ -19,5 +15,5 @@
 }
 
 h5 {
-    font-weight: 800;
+    font-weight: 700;
 } 
