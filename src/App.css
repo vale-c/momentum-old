@@ -9,27 +9,19 @@ html {
 }
 
 body {
-    height: 100%;
     min-height: 100%;
     margin: 0;
-    overflow: hidden;
     /*hide scrollbar*/
-    
+    overflow: hidden;
     /*Positioning*/
     display: flex;
     align-items: center;
     justify-content: center;
     /* Let's center and scale the image nicely */
-    background: 
-      linear-gradient(
-     rgba(255, 255, 255, 0.03), 
-     rgba(84, 84, 84, 0.15)
-    ),
-     url('https://source.unsplash.com/category/landscape/1920x1080');
+    background: url('https://source.unsplash.com/category/landscape/1920x1080');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
     /* fonts */
     font-family: 'Josefin Sans', 'Arial', sans-serif;
     color: #fff;

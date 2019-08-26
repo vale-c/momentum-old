@@ -2,7 +2,7 @@
   /* fonts */
   font-family: 'Josefin Sans', 'Arial', sans-serif;
   font-size: 2.5rem;
-  text-shadow: 0 0 15px #000;
+  text-shadow: 0 0 25px #000;
   margin-top: -90px;
 }
 
@@ -15,3 +15,12 @@
 } 
 
 
+@media only screen and (max-width: 600px) {
+  .greetingTextWrapper.row {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .greetingText {
+      margin-top: 0;
+  }
+}

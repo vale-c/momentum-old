@@ -79,22 +79,24 @@ class Quotes extends React.Component {
 
     const Social = () => (
       <div className="social">
-        <a
+        <button
+          className="socialBtn"
           onClick={this.handleTweetClick}
           target="_blank"
           href="#"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-twitter" />
-        </a>
-        <a
+          <i className="fab fa-twitter fa-2x" />
+        </button>
+        <button
+          className="socialBtn"
           onClick={this.handleFacebookClick}
           target="_blank"
           href="#"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-square" />
-        </a>
+          <i className="fab fa-facebook-square fa-2x" />
+        </button>
       </div>
     );
 
@@ -103,7 +105,7 @@ class Quotes extends React.Component {
           <QuoteText quote={quote} author={author} />
           <Button onClick={this.getQuote} />
           {
-            this.state.isHovering && 
+            this.state.isHovering &&
             <Social />
           }
         </div>

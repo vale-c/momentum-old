@@ -28,3 +28,19 @@
     margin-top: 6.5rem;
     margin-left: 0.3rem;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+    .clockHours,
+    .clockMinutes,
+    .clockSeconds,
+    .clockAmOrPm {
+        font-size: 2rem;
+        margin-top: 25%;
+        padding: 0;   
+    }
+    .am-pm {
+        margin-top: 3.2rem;
+    }
+  }

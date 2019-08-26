@@ -3,7 +3,7 @@ import './Greeting.css';
 import {Grid, Row, Col} from 'react-bootstrap';
 
 function getRandom(items) { //pick a random name from the nameData list at the bottom of the Greeting component
-  return items[Math.floor(Math.random()*items.length)];
+  return items[items.length * Math.random() | 0];
 }
 
 class Greeting extends React.Component {
@@ -51,38 +51,36 @@ const nameData = {
 	"firstName": [
     "Honey",
     "Sweetheart",
+    "Kit Kat",
     "Mate",
     "Bro",
-    "Mama",
     "Wiz",
     "Cutie",
     "Alien",
     "Human",
     "Sexy",
-    "Princess",
     "Angel",
     "Cutie Pie",
     "Bae",
+    "Beautiful",
     "Good Looking",
     "Pal",
+    "Cheerio",
+    "Cookie Crunch",
     "Smarty Pants",
     "Cookie",
     "Sunshine",
-    "Baby",
-    "Honeybunch",
+    "Waffle Crisp",
+    "Honey Tea",
     "Rockstar",
-    "Treasure",
+    "Fox",
+    "Lucky Charm",
     "Classy",
-    "Miss",
     "Captain",
     "Ace",
-    "Cauliflower",
-    "Bananarama",
     "Sweetie",
     "Ray Of Light",
     "Sunflower",
-    "Flower",
-    "Precious"
 	]}
 
 

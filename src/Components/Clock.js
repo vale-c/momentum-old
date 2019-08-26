@@ -33,7 +33,7 @@ class Clock extends React.Component {
 					  <h1>{(m < 10 ? '0' + m : m)}</h1>
 					</Col>
 					<Col className="clockAmOrPm">
-					  <h3 className="am-pm">{(h <= 12 ? 'AM' : 'PM')}</h3>
+					  <h3 className="am-pm">{(h < 12 ? 'AM' : 'PM')}</h3>
 					</Col>
 				</Row>
 			</Grid>;

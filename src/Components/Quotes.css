@@ -13,31 +13,47 @@
 /*font customization*/
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.2em;
-  font-weight: 700;
+  font-weight: 300;
   text-align: center;
   text-shadow: 0 0 25px #000;
 }
 
 .refresh-btn {
-  background-color: rgba(218, 223, 225, 1);
-  color: rgba(46, 49, 49, 1);
-  border: 1px solid rgb(179, 185, 187);
+  background-color: #f5f6fa;
+  border: 1px solid #7f8fa6;
   border-radius: 5px;
-  padding: 4px 15px;
+  color: #7f8fa6;
+  cursor: pointer;
+  padding: 5px 15px;
 }
 
 .refresh-btn:hover {
-  background-color: rgba(46, 49, 49, 1);
-  color: rgba(218, 223, 225, 1);
+  background-color: #718093;
+  color: #dcdde1;
+}
+
+.socialBtn {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer; 
 }
 
 .fa-twitter {
-  margin-top: 0.5rem;
-  margin-right: 1rem;
   color: rgba(107, 185, 240, 1);
+  margin-top: 0.6rem;
+  margin-right: 1rem;
 }
 
 .fa-facebook-square {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   color:rgba(31, 58, 147, 1);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .quoteWrapper {
+    font-size: 1rem;
+  }
 }
