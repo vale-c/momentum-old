@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap');
+
 .weatherWrapper {
+    font-family: 'Fira Mono', sans-serif;
     position: absolute;
     right: 0.5rem;
     text-align: center;
@@ -18,9 +21,9 @@ h5 {
     font-weight: 700;
 }
 
-
 @media only screen and (max-width: 600px) {
     .weatherWrapper {
-        font-size: 0.7rem;  
+        font-size: 0.7rem;
+        font-weight: 400; 
     }
-  }
+}

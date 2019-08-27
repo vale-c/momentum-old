@@ -2,6 +2,7 @@ import React from 'react';
 import './Quotes.css';
 import axios from 'axios';
 
+const momentumAppLink = "https://www.momentumdash.netlify.com";
 
 class Quotes extends React.Component {
   constructor(props) {
@@ -11,11 +12,12 @@ class Quotes extends React.Component {
       author: "",
       isHovering: false
     };
-    this.handleTweetClick = this.handleTweetClick.bind(this);
     this.handleFacebookClick = this.handleFacebookClick.bind(this);
+    this.handleRedditClick = this.handleRedditClick.bind(this);
+    this.handleTumblrClick = this.handleTumblrClick.bind(this);
+    this.handleTweetClick = this.handleTweetClick.bind(this);
     this.handleMouseHover = this.handleMouseHover.bind(this);
   }
-
 
   handleMouseHover() {
     this.setState(this.toggleHoverState);
@@ -47,19 +49,31 @@ class Quotes extends React.Component {
       });
   };
 
-  handleTweetClick() {
-    window.open(
-      `https://twitter.com/intent/tweet?text="${this.state.quote} ${
-        this.state.author
-      }"`
-    );
-  }
-
   handleFacebookClick() {
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=valentinacalabrese.com&quote=${
         this.state.quote
       }${this.state.author}`
+    );
+  }
+
+  handleRedditClick() {
+    window.open(
+      `https://reddit.com/submit?url=${momentumAppLink}&title=${this.state.quote}${this.state.author}`
+    );
+  }
+
+  handleTumblrClick() {
+    window.open(
+      `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${momentumAppLink}&title=${this.state.quote}&caption=${this.state.quote}${this.state.author}&tags=motivational,quotes,inspiration,quoteoftheday`
+    )
+  }
+
+  handleTweetClick() {
+    window.open(
+      `https://twitter.com/intent/tweet?text="${this.state.quote} ${
+        this.state.author
+      }"`
     );
   }
 
@@ -79,24 +93,43 @@ class Quotes extends React.Component {
 
     const Social = () => (
       <div className="social">
-        <button
-          className="socialBtn"
-          onClick={this.handleTweetClick}
-          target="_blank"
-          href="#"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-twitter fa-2x" />
-        </button>
-        <button
+      <button
           className="socialBtn"
           onClick={this.handleFacebookClick}
           target="_blank"
           href="#"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-square fa-2x" />
-        </button>
+        <i className="fab fa-facebook-square fa-2x" />
+      </button>
+      <button
+          className="socialBtn"
+          onClick={this.handleRedditClick}
+          target="_blank"
+          href="#"
+          rel="noopener noreferrer"
+        >
+        <i className="fab fa-reddit fa-2x" />
+      </button>
+      <button
+          className="socialBtn"
+          onClick={this.handleTweetClick}
+          target="_blank"
+          href="#"
+          rel="noopener noreferrer"
+        >
+        <i className="fab fa-twitter fa-2x" />
+      </button>
+      <button
+          className="socialBtn"
+          onClick={this.handleTumblrClick}
+          target="_blank"
+          href="#"
+          rel="noopener noreferrer"
+        >
+        <i className="fab fa-tumblr fa-2x" />
+      </button>
+      
       </div>
     );
 
