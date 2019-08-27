@@ -29,18 +29,17 @@
     margin-left: 0.3rem;
 }
 
-
-
-@media only screen and (max-width: 600px) {
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
     .clockHours,
     .clockMinutes,
     .clockSeconds,
     .clockAmOrPm {
-        font-size: 2rem;
-        margin-top: 25%;
-        padding: 0;   
+        font-size: 1.4rem;
+        margin-bottom: -30px;  
     }
     .am-pm {
-        margin-top: 3.2rem;
+        margin-top: 2.2rem;
     }
-  }
+}
