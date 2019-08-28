@@ -4,7 +4,6 @@ import './Weather.css';
 
 const CORS_HEADER = "https://cors-anywhere.herokuapp.com/";
 // const DARKSKY_API_CALL = "https://api.darksky.net/forecast/640bddbf1aa37eddd8253e47a46a46a8/";
-// const Google_Geo = "AIzaSyC1TaAGpiy3G-ICOu0j7MCWAjVdeZACpAo";
 
 class Weather extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class Weather extends React.Component {
       temp: "",
       description: "",
       windSpeed: "",
-      humidity: ""
+      humidity: "",
     };
     this.getLocation = this.getLocation.bind(this);
     this.getWeatherData = this.getWeatherData.bind(this);
@@ -24,7 +23,6 @@ class Weather extends React.Component {
   getLocation = () => {
       axios
         .get("https://ip.zxq.co/") //awesome API to get Geolocation with no rate limit!!
-        //https://api.ipdata.co/?api-key=036623005d047344581751a318e8869d09652e6c031e7d2be99e7e74 --> REACHED LIMIT OF API CALLS FOR THIS KEY!!!
         .then(response => {
           this.setState({
             city: response.data.city,
@@ -38,7 +36,6 @@ class Weather extends React.Component {
           console.log(error);
         });
   };
-
 
   getWeatherData = () => {
     axios
@@ -67,14 +64,14 @@ class Weather extends React.Component {
   render() {
 
     let hr = new Date().getHours();
-    let tod = hr >= 17 ? "night" : "day";
+    let tod = hr > 17 ? "night" : "day";
     
     const { city, region, country,  temp, description, id, wind, humidity } = this.state;
 
     const WeatherData = ({ city, region, country, temp, description, id, humidity }) => 
       <div>
           <h4 className="location"> {city} </h4>
-          <h4 className="region-contry"> {region}, {country}  </h4>
+          <h4 className="region-country"> {region}, {country}  </h4>
           <i id='icon' className={'wi wi-owm-' + tod + '-' + id}></i>
           <h3 className="desc"> {description} </h3>
           <h2 className="temp"> {temp}°</h2>
@@ -84,12 +81,12 @@ class Weather extends React.Component {
     return <div className="card">
       <div className="weatherWrapper">
         <WeatherData city={city} region={region} country={country}
-                     /* from OpenWeatherMap API CALL */
-                     temp={temp}
-                     description={description}
-                     id={id}
-                     wind={wind}
-                     humidity={humidity}
+                    /* from OpenWeatherMap API CALL */
+                    temp={temp}
+                    description={description}
+                    id={id}
+                    wind={wind}
+                    humidity={humidity}
         />
         </div>
       </div>;
