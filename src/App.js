@@ -3,13 +3,14 @@ import Clock from './Components/Clock';
 import Weather from "./Components/Weather.js";
 import Greeting from './Components/Greeting';
 import Quotes from './Components/Quotes';
+import Todo from './Components/Todo';
 
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-		  this.state = {
+		this.state = {
 		};
   }
 
@@ -19,6 +20,7 @@ class App extends Component {
         <Weather/>
         <Clock/>
         <Greeting/>
+        <Todo/>
         <Quotes/>
       </div>
     );
