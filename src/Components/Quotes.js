@@ -135,7 +135,11 @@ class Quotes extends React.Component {
 
     return <div className="quoteContainer">
         <div className="quoteWrapper" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
-          <QuoteText quote={quote} author={author} />
+          { (this.state.quote !== undefined && this.state.author!== undefined) ? (
+            <QuoteText quote={quote} author={author} /> 
+          ) : ( 
+            <QuoteText quote={"Uhm, no quotes for now 🤔...Try again in a few secs"} author = {"Vale"}/>
+          )}
           <Button onClick={this.getQuote} />
           {
             this.state.isHovering &&

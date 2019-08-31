@@ -25,7 +25,7 @@
   color: #7f8fa6;
   cursor: pointer;
   padding:5px 15px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
 }
 
 .refresh-btn:hover {
@@ -36,7 +36,7 @@
 .socialBtn {
   background-color: transparent;
   border: none;
-  margin: 0;
+  margin-top: 1rem;
   padding: 0;
   cursor: pointer; 
 }
