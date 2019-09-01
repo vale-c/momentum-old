@@ -4,13 +4,12 @@ import TodoItem from './TodoItem';
 import AddTodo from './AddTodo';
 import PropTypes from 'prop-types';
 
+
 class Todos extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            showTodoPanel: false,
-        }
+    state = {
+        showTodoPanel: false,  
     }
+
 
     render() {
         const { showTodoPanel } = this.state;
@@ -23,7 +22,7 @@ class Todos extends React.Component {
                 ))
             )}
             {
-                showTodoPanel && <AddTodo/>
+                showTodoPanel && <AddTodo addTodo={this.props.addTodo}/>
             }
         </div>
     }
@@ -31,7 +30,9 @@ class Todos extends React.Component {
 
 //Proptypes
 Todos.propTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired,
 }
 
 export default Todos;

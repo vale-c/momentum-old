@@ -56,7 +56,7 @@ class Weather extends React.Component {
       });
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.getLocation();
     this.getWeatherData();
   }
