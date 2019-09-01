@@ -1,0 +1,9 @@
+.todoItemWrapper {
+    background-color: rgba(15, 15, 15, 0.925);
+    border-color: rgba(255, 255, 255, .15);
+    margin-right: 0;
+    max-width: 20rem;
+    padding: 5px;
+    transition: opacity 0.5s ease;
+    z-index: 20;
+}

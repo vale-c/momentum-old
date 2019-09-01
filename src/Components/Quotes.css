@@ -2,17 +2,18 @@
 
 .quoteContainer {
   margin: 0 auto;
+  z-index: 1;
 }
 
 .quoteWrapper {
   position: fixed;
   left: 50%;
   bottom: -50px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
 
 /*font customization*/
   font-family: 'Fira Mono', monospace;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 500;
   text-align: center;
   text-shadow: 0 1px 5px rgba(0,0,0,.1);
@@ -66,7 +67,7 @@
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
   .quoteWrapper {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     bottom: -70px;
   }
 }
