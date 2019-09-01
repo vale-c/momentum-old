@@ -58,13 +58,13 @@ class App extends Component {
     });
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     localStorage.getItem('todos') && this.setState({
       todos: JSON.parse(localStorage.getItem('todos')),
     })
   }
-  
-  componentWillUpdate(nextProps, nextState) {
+
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     localStorage.setItem('todos', JSON.stringify(nextState.todos));
     localStorage.setItem('todosDate', Date.now());
   }

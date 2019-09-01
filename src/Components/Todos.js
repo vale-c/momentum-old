@@ -10,7 +10,6 @@ class Todos extends React.Component {
         showTodoPanel: false,  
     }
 
-
     render() {
         const { showTodoPanel } = this.state;
 

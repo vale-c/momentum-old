@@ -7,8 +7,10 @@
     color: #ffffff;
     font-size: 1rem;
     font-family: "Josefin Sans", "Helvetica", sans-serif;
+    height: 2.5rem;
     margin-right: -1rem;
     outline: none;
     min-width: 360px;
+    padding: 20px;
     z-index: 999;
 }
