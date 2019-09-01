@@ -10,5 +10,5 @@
     margin-right: -1rem;
     outline: none;
     max-width: 20rem;
-    z-index: 20;
+    z-index: 999;
 }

@@ -11,8 +11,7 @@
     bottom: 0;
     right: 0;
     margin-right: 1rem;
-
-    transition: max-height .3s ease, min-height .3s ease, padding .3s ease;
+    transition: .3 ease-in-out;
 }
 
 .todoBtn {

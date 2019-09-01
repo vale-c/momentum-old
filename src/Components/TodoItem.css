@@ -3,7 +3,7 @@
     border: none;
     margin-right: -1rem;
     max-width: 20rem;
-    padding: 1px;
+    padding: 0.1rem;
     transition: opacity 0.5s ease;
-    z-index: 20;
+    z-index: 999;
 }

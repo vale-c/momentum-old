@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Clock from './Components/Clock';
 import Weather from "./Components/Weather.js";
 import Greeting from './Components/Greeting';
@@ -60,18 +61,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Weather/>
-        <Clock/>
-        <Greeting/>
-        <Todos
-            addTodo={this.addTodo}
-            todos={this.state.todos}
-						markComplete={this.markComplete}
-						delTodo={this.delTodo} 
-        />
-        <Quotes/>
-      </div>
+      <Router>
+        <div className="App">
+          <Weather/>
+          <Clock/>
+          <Greeting/>
+          <Todos
+              addTodo={this.addTodo}
+              todos={this.state.todos}
+              markComplete={this.markComplete}
+              delTodo={this.delTodo} 
+          />
+          <Quotes/>
+        </div>
+      </Router>
     );
   }
 }
