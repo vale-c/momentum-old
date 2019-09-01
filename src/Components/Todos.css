@@ -21,9 +21,9 @@
     border-right: none;
     border-color: #fff;
     color: white;
+    cursor: pointer;
     font-weight: 400;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
     outline: none;
-    
 }
