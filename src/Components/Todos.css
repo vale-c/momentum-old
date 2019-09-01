@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap');
 
-.todoWrapper {
+.todoListWrapper {
     /* fonts */
     font-family: 'Fira Mono', 'Helvetica', sans-serif;
     font-size: 1rem;
@@ -11,6 +11,8 @@
     bottom: 0;
     right: 0;
     margin-right: 1rem;
+
+    transition: max-height .3s ease, min-height .3s ease, padding .3s ease;
 }
 
 .todoBtn {

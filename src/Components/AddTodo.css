@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap');
+
+.newTodo {
+    display: inline-block;
+    background-color: rgba(15, 15, 15, 0.925);
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: "Josefin Sans", "Helvetica", sans-serif;
+    margin-right: -15px;
+    outline: none;
+    max-width: 20rem;
+    z-index: 20;
+}
