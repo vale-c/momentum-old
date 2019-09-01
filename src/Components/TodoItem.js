@@ -22,11 +22,11 @@ export class TodoItem extends Component {
     }
 
     render() {
-        const { id, title } = this.props.todo;
+        const { id, title, completed } = this.props.todo;
         return (
             <div className="todoItemWrapper" style={this.getStyle()}>
                 <p>
-                    <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} /> {' '}
+                    <input type="checkbox" checked={ completed } onChange={this.props.markComplete.bind(this, id)} /> {' '}
                     { title }
                     <button type="button" className="close" aria-label="Close" onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>
                         <span aria-hidden="true">&times;</span>
