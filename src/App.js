@@ -42,7 +42,7 @@ class App extends Component {
   //Add Todo
   addTodo = (title) => {
     const newTodo = {
-      id: 4,
+      id: uuid.v4(),
       title,
       completed: false
     }
