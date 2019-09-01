@@ -9,7 +9,7 @@
   left: 50%;
   bottom: -50px;
   transform: translate(-50%, -40%);
-  z-index: -999;
+  /* z-index: -999; */
 
 /*font customization*/
   color: rgba(255, 255, 255, .9);
