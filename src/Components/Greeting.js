@@ -40,7 +40,7 @@ class Greeting extends React.Component {
 		return <Grid>
 			<Row className="greetingTextWrapper">
         <Col xs={6} md={3}>
-          <h3 className="greetingText">Good {time<12 ? 'Morning' : time<18 ? 'Afternoon' : time < 22 ? 'Evening' : 'Night'} {firstName} </h3>
+          <h3 className="greetingText">Good {time < 12 ? 'Morning' : time < 18 ? 'Afternoon' : time < 22 ? 'Evening' : 'Night'} {firstName} </h3>
         </Col>
       </Row>
 		</Grid>;

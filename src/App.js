@@ -1,32 +1,22 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Clock from './Components/Clock';
 import Weather from "./Components/Weather.js";
 import Greeting from './Components/Greeting';
 import Quotes from './Components/Quotes';
 import Todos from './Components/Todos';
-import uuid from 'uuid';
+// import uuid from 'uuid';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
   state = {
-      todos: [{
-          id: uuid.v4(),
-          title: 'Studiare Metodologie di Programmazione!!!',
-          completed: false,
-        },
-        {
-          id: uuid.v4(),
-          title: 'Build Cool Stuff',
-          completed: false,
-        },
-        {
-          id: uuid.v4(),
-          title: 'Create an AI powered Fashion Brand',
-          completed: false,
-        }
-      ],
+      todos: [],
   };
+
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=8')
+    .then(res => this.setState({todos: res.data}))
+  }
 
   // Toggle Complete
   markComplete = (id) => {
@@ -42,26 +32,28 @@ class App extends Component {
 
   //Add Todo
   addTodo = (title) => {
-    const newTodo = {
-      id: uuid.v4(),
-      title,
+    axios.post('https://jsonplaceholder.typicode.com/todos', {
+      title, 
       completed: false
-    }
-    this.setState({
-      todos: [...this.state.todos, newTodo]
-    });
+  })
+      .then(res => 
+        this.setState({ 
+          todos: [...this.state.todos, res.data]
+        }));
   }
 
   // Toggle Complete
   delTodo = (id) => {
-    this.setState({
-      todos: [...this.state.todos.filter(todo => todo.id !== id)]
-    });
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res =>
+        this.setState({
+          todos: [...this.state.todos.filter(todo => todo.id !== id)]
+        })
+    );
   }
 
   render() {
     return (
-      <Router>
         <div className="App">
           <Weather/>
           <Clock/>
@@ -74,7 +66,6 @@ class App extends Component {
           />
           <Quotes/>
         </div>
-      </Router>
     );
   }
 }

@@ -4,7 +4,6 @@
     /* fonts */
     font-family: 'Fira Mono', 'Helvetica', sans-serif;
     font-size: 1rem;
-    font-weight: 700;
     text-shadow: 0 1px 5px rgba(0, 0, 0, .1);
     /*positioning*/
     position: fixed;
@@ -12,6 +11,10 @@
     right: 0;
     margin-right: 1rem;
     transition: .3 ease-in-out;
+}
+
+.todoListWrapper > p {
+    font-weight: 400;
 }
 
 .todoBtn {
@@ -22,7 +25,8 @@
     border-color: #fff;
     color: white;
     cursor: pointer;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 700;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
     outline: none;
