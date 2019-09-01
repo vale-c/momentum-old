@@ -9,6 +9,6 @@
     font-family: "Josefin Sans", "Helvetica", sans-serif;
     margin-right: -1rem;
     outline: none;
-    max-width: 20rem;
+    min-width: 360px;
     z-index: 999;
 }
