@@ -30,11 +30,16 @@
   padding:5px 15px;
   margin-bottom: 0.8rem;
   margin-top: -0.3rem;
+  outline: none;
 }
 
 .refresh-btn:hover {
   background-color: #718093;
   color: #dcdde1;
+}
+
+.refresh-btn:after {
+  transform: translateX(-50%)scaleY(1)scaleX(1.45);
 }
 
 .socialBtn {
@@ -70,7 +75,7 @@
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
   .quoteWrapper {
-    font-size: 0.7rem;
-    bottom: -70px;
+    font-size: 0.5rem;
+    bottom: 0px;
   }
 }

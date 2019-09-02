@@ -87,9 +87,9 @@ class Quotes extends React.Component {
       </div>
     );
 
-    const Button = ({ onClick }) => <button className="refresh-btn animated rubberBand delay-2s" onClick={onClick}>
-        <i className="fas fa-sync-alt" />
-      </button>;
+    const Button = ({ onClick }) => <button className="refresh-btn" onClick={onClick}>
+        <i className="fas fa-sync fa-spin"></i>
+    </button>;
 
     const Social = () => (
       <div className="social">
