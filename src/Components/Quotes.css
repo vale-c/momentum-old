@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap');
 
 .quoteContainer {
   margin: 0 auto;
@@ -15,8 +15,8 @@
   color: rgba(255, 255, 255, .9);
   line-height: 1.2;
   font-family: 'Fira Mono', monospace;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 0.9em;
+  font-weight: 700;
   text-align: center;
   text-shadow: 0 1px 5px rgba(0,0,0,.1);
 }
@@ -24,7 +24,7 @@
 .refresh-btn {
   background-color: #f5f6fa;
   border: 1px solid #7f8fa6;
-  border-radius: 5px;
+  border-radius: 3px;
   color: #7f8fa6;
   cursor: pointer;
   padding:5px 15px;
