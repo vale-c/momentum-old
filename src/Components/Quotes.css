@@ -7,7 +7,7 @@
 .quoteWrapper {
   position: fixed;
   left: 50%;
-  bottom: -50px;
+  bottom: -30px;
   transform: translate(-50%, -40%);
   /* z-index: -999; */
 
