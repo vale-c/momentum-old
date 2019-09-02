@@ -80,13 +80,13 @@ class Weather extends React.Component {
     let hr = new Date().getHours();
     let tod = hr > 17 ? "night" : "day";
     
-    const { city, region, country, country_flag, temp, description, id, wind, humidity } = this.state;
+    const { city, region, country_flag, temp, description, id, wind, humidity } = this.state;
 
-    const WeatherData = ({ city, region, country, country_flag, temp, description, id, humidity }) => 
+    const WeatherData = ({ city, region, country_flag, temp, description, id, humidity }) => 
       <div>
           <h4 className="location"> {city} </h4>
-          <h4 className="region-country"> {region}, {country},&nbsp;
-            <img alt="country-flag" src= {country_flag} style={{height: '1rem'}} />
+          <h4 className="region-country"> {region},
+            <img alt="country-flag" src= {country_flag} style={{height: '1rem', marginLeft: '0.3rem'}} />
           </h4> 
           <i id='icon' className={'wi wi-owm-' + tod + '-' + id}></i>
           <h3 className="desc"> {description} </h3>
@@ -96,7 +96,7 @@ class Weather extends React.Component {
     
     return <div className="card">
       <div className="weatherWrapper">
-        <WeatherData city={city} region={region} country={country} country_flag={country_flag}
+        <WeatherData city={city} region={region} country_flag={country_flag}
                     /* from OpenWeatherMap API CALL */
                     temp={temp}
                     description={description}
