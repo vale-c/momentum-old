@@ -71,7 +71,7 @@ class App extends Component {
 
   render() {
     return (
-        <div className="App">
+      <div className="App container">
           <Weather/>
           <Clock/>
           <Greeting/>
@@ -82,7 +82,7 @@ class App extends Component {
               delTodo={this.delTodo} 
           />
           <Quotes/>
-        </div>
+      </div>
     );
   }
 }

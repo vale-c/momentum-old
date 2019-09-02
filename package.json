@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "classnames": "^2.2.6",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
     "react-simple-storage": "^1.4.1",
+    "react-transition-group": "^4.2.2",
     "react-weathericons": "^1.0.4",
     "uuid": "^3.3.3"
   },
