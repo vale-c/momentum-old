@@ -18,7 +18,7 @@
   font-size: 0.9em;
   font-weight: 700;
   text-align: center;
-  text-shadow: 0 1px 5px rgba(0,0,0,.1);
+  text-shadow: rgb(50, 50, 50) 0px 0px 10px;
 }
 
 .refresh-btn {
@@ -28,7 +28,7 @@
   color: #7f8fa6;
   cursor: pointer;
   padding:5px 15px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 }
 
 .refresh-btn:hover {
@@ -39,7 +39,7 @@
 .socialBtn {
   background-color: transparent;
   border: none;
-  margin-top: 1rem;
+  margin-top: -0.3rem;
   padding: 0;
   cursor: pointer; 
 }

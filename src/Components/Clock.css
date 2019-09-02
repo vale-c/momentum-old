@@ -16,8 +16,8 @@
     /* fonts */
     color: #fff;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 4rem;
-    text-shadow: 0 1px 5px rgba(0,0,0,.1);
+    font-size: 5rem;
+    text-shadow: rgb(50, 50, 50) 0px 0px 10px;
 }
 
 .am-pm {
@@ -25,7 +25,7 @@
     flex-flow: wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 6.5rem;
+    margin-top: 7.5rem;
     margin-left: 0.3rem;
 }
 
