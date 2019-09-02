@@ -3,7 +3,7 @@
 .weatherWrapper {
     font-family: 'Fira Mono', sans-serif;
     position: absolute;
-    right: 0.5rem;
+    right: 1rem;
     text-align: center;
     top: 0;
     text-shadow: rgb(50, 50, 50) 0px 0px 10px;

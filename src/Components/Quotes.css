@@ -29,6 +29,7 @@
   cursor: pointer;
   padding:5px 15px;
   margin-bottom: 0.8rem;
+  margin-top: -0.3rem;
 }
 
 .refresh-btn:hover {
