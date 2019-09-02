@@ -140,10 +140,13 @@ class Quotes extends React.Component {
           ) : ( 
             <QuoteText quote={"Uhm, no quotes for now 🤔...Try again in a few secs"} author = {"Vale"}/>
           )}
-          <Button onClick={this.getQuote} />
+          
           {
             this.state.isHovering &&
-            <Social />
+            <React.Fragment>
+              <Button onClick={this.getQuote} />
+              <Social />
+            </React.Fragment>
           }
         </div>
       </div>;
