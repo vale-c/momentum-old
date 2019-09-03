@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:300&display=swap');
 
 .weatherWrapper {
-    font-family: 'Fira Mono', sans-serif;
+    font-family: 'Fira Mono', 'Helvetica', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
     position: absolute;
     right: 1rem;
     text-align: center;
@@ -18,13 +20,10 @@
     padding: 0.2em;
 }
 
-h5 {
-    font-weight: 700;
-}
 
 @media only screen and (max-width: 600px) {
-    .weatherWrapper {
+    .weatherWrapper{
         font-size: 0.7rem;
-        font-weight: 400; 
+        font-weight: 300; 
     }
 }

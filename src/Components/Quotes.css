@@ -8,9 +8,7 @@
   position: fixed;
   left: 50%;
   bottom: 0px;
-  transform: translate(-50%, -5%);
-  /* z-index: -999; */
-
+  transform: translate(-50%, -3%);
 /*font customization*/
   color: rgba(255, 255, 255, .9);
   line-height: 1.2;
@@ -21,21 +19,27 @@
   text-shadow: rgb(50, 50, 50) 0px 0px 10px;
 }
 
+p.text-author-name {
+  margin-top: -8px;
+}
+
 .refresh-btn {
-  background-color: #f5f6fa;
-  border: 1px solid #7f8fa6;
+  background-color: #1b1b1d;
+  border: 2px solid transparent;
   border-radius: 3px;
-  color: #7f8fa6;
+  color: #fff;
   cursor: pointer;
-  padding:5px 15px;
+  font-size: 0.6rem;
+  padding: 5px 15px;
   margin-bottom: 0.8rem;
-  margin-top: -0.3rem;
+  margin-top: -0.2rem;
   outline: none;
 }
 
 .refresh-btn:hover {
-  background-color: #718093;
-  color: #dcdde1;
+  background-color: #a1a1a1;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .refresh-btn:after {
@@ -43,31 +47,38 @@
 }
 
 .socialBtn {
-  background-color: transparent;
+  font-size: 0.5rem;
+  background-color: #fff;
+  border-radius: 15%;
   border: none;
   margin-top: -0.3rem;
-  padding: 0;
-  cursor: pointer; 
+  margin-right: 0.3rem;
+  cursor: pointer;
+  padding: 0.2rem;
 }
 
 .fa-facebook-square {
-  color:rgba(31, 58, 147, 1);
-  margin: 0 0.5rem;
+  color: #87b2e6;
+  width: 20px;
+  margin: 0 auto;
 }
 
 .fa-reddit {
-  color: #ff4500;
-  margin: 0 0.5rem;
+  color: #ff6a33;
+  margin: 0 auto;
+  width: 20px;
 }
 
 .fa-tumblr {
-  color: #34526f;
-  margin: 0 0.5rem;
+  color: #a8c2d6;
+  margin: 0 auto;
+  width: 20px;
 }
 
 .fa-twitter {
-  color: rgba(107, 185, 240, 1);
-  margin: 0 0.5rem;
+  color: #6bb9f0;
+  margin: 0 auto;
+  width: 20px;
 }
 
 
