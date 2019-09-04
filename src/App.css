@@ -24,6 +24,6 @@ body {
     background-size: cover;
     /* Special Effects */
     background-blend-mode: screen multiply;
-    backdrop-filter: saturate(200%);
+    backdrop-filter: saturate(250%) contrast(50%);
     text-shadow: rgb(50, 50, 50) 0px 0px 10px;
 }
