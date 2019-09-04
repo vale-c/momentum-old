@@ -26,9 +26,10 @@
     flex-flow: wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 9.7rem;
+    margin-top: 9.4rem;
+    letter-spacing: 0.2rem;
     font-weight: 300;
-    margin-left: 0.3rem;
+    margin-left: 0.6rem;
 }
 
 @media only screen 

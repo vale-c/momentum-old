@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300&display=swap');
 
 .weatherWrapper {
-    font-family: 'Fira Mono', 'Helvetica', sans-serif;
+    font-family: 'Josefin Sans', 'Helvetica', sans-serif;
     font-size: 1rem;
     font-weight: 300;
     position: absolute;

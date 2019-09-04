@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
 
 .quoteContainer {
   margin: 0 auto;
@@ -8,7 +8,7 @@
   position: fixed;
   left: 50%;
   bottom: 0px;
-  transform: translate(-50%, -3%);
+  transform: translate(-50%,-3%);
 /*font customization*/
   color: rgba(255, 255, 255, .9);
   line-height: 1.2;
@@ -25,7 +25,7 @@ p.text-author-name {
 
 .refresh-btn {
   background-color: #1b1b1d;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -38,7 +38,7 @@ p.text-author-name {
 
 .refresh-btn:hover {
   background-color: #a1a1a1;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   color: #fff;
 }
 

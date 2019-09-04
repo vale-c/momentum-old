@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
 
 .newTodo {
     display: inline-block;
@@ -6,7 +6,7 @@
     border: none;
     color: #ffffff;
     font-size: 1rem;
-    font-family: "Josefin Sans", "Helvetica", sans-serif;
+    font-family: "Fira Mono", "Helvetica", sans-serif;
     font-weight: 400;
     height: 2.5rem;
     margin-right: -1rem;
