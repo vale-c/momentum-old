@@ -9,22 +9,22 @@ import './App.css';
 
 class App extends Component {
   state = {
-      todos: [{
-          id: uuid.v4(),
-          title: 'Hey Human Friend 👁️🖖',
-          completed: false,
-        },
-        {
-          id: uuid.v4(),
-          title: 'Add here your todos! 📃🖊️',
-          completed: false,
-        },
-        {
-          id: uuid.v4(),
-          title: 'It is a nice way to keep track of all the stuff you have to do.😉👍',
-          completed: false,
-        }
-      ],
+    todos: [{
+      id: uuid.v4(),
+      title: 'Hey Human Friend 👁️🖖',
+      completed: false,
+    },
+    {
+      id: uuid.v4(),
+      title: 'Add here your todos! 📃🖊️',
+      completed: false,
+    },
+    {
+      id: uuid.v4(),
+      title: 'It is a nice way to keep track of all the stuff you have to do.😉👍',
+      completed: false,
+    }
+    ],
   };
 
   // Toggle Complete
@@ -72,16 +72,16 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-          <Weather/>
-          <Clock/>
-          <Greeting/>
-          <Todos
-              addTodo={this.addTodo}
-              todos={this.state.todos}
-              markComplete={this.markComplete}
-              delTodo={this.delTodo} 
-          />
-          <Quotes/>
+        <Weather />
+        <Clock />
+        <Greeting />
+        <Todos
+          addTodo={this.addTodo}
+          todos={this.state.todos}
+          markComplete={this.markComplete}
+          delTodo={this.delTodo}
+        />
+        <Quotes />
       </div>
     );
   }
