@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Josefin+Sans&display=swap');
 
 .weatherWrapper {
-    font-family: 'Josefin Sans', 'Helvetica', sans-serif;
+    font-family: 'Fira Mono', 'Helvetica', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     position: absolute;
@@ -25,16 +25,18 @@
 }
 
 .weeklyBtn {
-    background: rgb(50, 50, 50);
-    border: 1px solid transparent;
+    background: transparent;
+    border: 1px solid #fff;
     color: #ffffff;
     cursor: pointer;
     padding: 5px 15px;
     border-radius: 3px;
+    outline: none;
 }
 
 .weeklyBtn:hover {
     border: 1px solid #ffffff;
+    background: rgb(50, 50, 50);
 }
 
 .forecastWrapper {
@@ -42,11 +44,11 @@
     flex-direction: row;
     float: left;
     align-content: space-between;
-    background-color: rgb(176, 248, 224);
-    color: #000;
+    background-color: rgba(14, 15, 16, 0.93);
+    color: #fff;
     font-size: 1rem;
-    margin-right: -1px;
-    margin-left: -20rem;
+    margin-right: -15px;
+    margin-left: -50rem;
 }
 
 .weatherCard {
@@ -55,16 +57,27 @@
     padding: 1rem;
 }
 
-@media only screen and (max-width: 600px) {
-    .weatherWrapper{
+p.temp {
+    font-size: 1.5rem;
+    font-family: 'Fira Mono', sans-serif;
+}
+
+p.minMax {
+    font-family: 'Fira Mono', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 650px) {
+    .weatherWrapper {
         font-size: 0.5rem;
-        font-weight: 300; 
+        font-weight: 300;
     }
 
     .forecastWrapper {
         font-size: 0.5rem;
-        margin-right: -1px;
-        margin-left: -9rem;
+        margin-right: -10px;
+        margin-left: -25rem;
     }
 
     .weatherCard {
