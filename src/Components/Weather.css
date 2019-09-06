@@ -20,14 +20,22 @@
     padding: 0.2em;
 }
 
+.card-text {
+    margin-top: -0.2rem;
+}
+
 .weeklyBtn {
     background: rgb(50, 50, 50);
-    border: 1px solid gray;
-    color: white;
+    border: 1px solid transparent;
+    color: #ffffff;
     cursor: pointer;
     padding: 5px 15px;
     border-radius: 3px;
     outline: none;
+}
+
+.weeklyBtn:hover {
+    border: 1px solid #ffffff;
 }
 
 .forecastWrapper {

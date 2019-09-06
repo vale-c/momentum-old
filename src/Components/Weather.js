@@ -134,8 +134,8 @@ class Weather extends React.Component {
       <div className="weatherCard">
           <p className="location">{city}</p>
           <i className={"wi wi-owm-" + tod + "-" + id}></i>
-          <h2>{Math.round(reading.main.temp)}°C</h2>
-          <p className="card-text">{reading.weather[0].description}</p>
+          <h4>{Math.round(reading.main.temp)}°C</h4>
+          <h4 className="card-text">{reading.weather[0].description}</h4>
       </div>
     );
     
