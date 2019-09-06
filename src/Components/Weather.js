@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import './Weather.css';
+import WeatherCard from './WeatherCard';
+
 const CORS_HEADER = "https://cors-anywhere.herokuapp.com/";
 const IPGEO_KEY = "3f061a38048d48d2ba1d660be4ba55f7";
 const OW_API = "13b0886c7c035390785605fc1c637712";
@@ -16,10 +18,7 @@ class Weather extends React.Component {
       windSpeed: "",
       humidity: "",
       showWeatherForecast: false,
-      degreeType: "celsius",
-
-      fullData: [],
-      dailyData: [],
+      days: []
     };
     this.getLocation = this.getLocation.bind(this);
     this.getWeatherData = this.getWeatherData.bind(this);
@@ -34,8 +33,8 @@ class Weather extends React.Component {
           city: response.data.city,
           region: response.data.region,
           country: response.data.country,
-          loc: response.data.loc
         });
+        //console.log(response);
       })
       .catch(error => {
         console.log(error);
@@ -63,11 +62,6 @@ class Weather extends React.Component {
       });
   };
 
-  updateForecastDegree = event => {
-    this.setState({
-      degreeType: event.target.value
-    }, () => console.log(this.state))
-  }
 
   componentDidMount = () => {
     const city = this.state.city;
@@ -76,12 +70,12 @@ class Weather extends React.Component {
 
     fetch(CORS_HEADER + weatherURL)
       .then(res => res.json())
-      .then(data => {
+      .then(data => {   
+        //console.log("Data List Loaded", data.list)
         const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
         this.setState({
-          fullData: data.list,
-          dailyData: dailyData
-        }); //() => console.log(this.state))
+          days: dailyData
+        })
       })
   }
 
@@ -98,17 +92,17 @@ class Weather extends React.Component {
       });
   };
 
+
   UNSAFE_componentWillMount() {
     this.getLocation();
     this.getWeatherData();
     this.getCountryFlag();
   }
 
-
   render() {
 
-    let hr = new Date().getHours();
-    let tod = hr > 17 ? "night" : "day";
+    let hour = new Date().getHours();
+    let timeOfDay = hour > 17 ? "night" : "day";
 
     const { showWeatherForecast } = this.state;
     const { city,  region,  country_flag,  temp,  description,  id,  wind,  humidity  } = this.state;
@@ -123,22 +117,12 @@ class Weather extends React.Component {
             style={{ height: "1rem", marginLeft: "0.3rem" }}
           />
         </p>
-        <i id="icon" className={"wi wi-owm-" + tod + "-" + id}></i>
+        <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
         <h3 className="desc"> {description} </h3>
         <p className="temp"> {Math.round(temp)}°</p>
         <p className="humidity">Humidity: {humidity}%</p>
       </div>
     );
-
-    const DayCard = ({ reading }) => (
-      <div className="weatherCard">
-          <p className="location">{city}</p>
-          <i className={"wi wi-owm-" + tod + "-" + id}></i>
-          <h4>{Math.round(reading.main.temp)}°C</h4>
-          <h4 className="card-text">{reading.weather[0].description}</h4>
-      </div>
-    );
-    
 
     return (
       <div className="card">
@@ -155,14 +139,11 @@ class Weather extends React.Component {
             wind={wind}
             humidity={humidity}  
           />
-        <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast })}>Weekly Forecast</button>
+        <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast })}><span role="img" aria-label="temp-emoji">Weekly 🌡️</span></button>
         <br/><br/>
         <div className="forecastWrapper">
           { 
-              showWeatherForecast &&
-                  (this.state.dailyData.map((reading, index) => 
-                      <DayCard reading = { reading } key = { index }/>
-                  ))
+              showWeatherForecast &&  this.state.days.map((day, index) => <WeatherCard day={day} key={index}/>)
           }
           </div>
         </div>

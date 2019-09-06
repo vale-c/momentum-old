@@ -24,8 +24,8 @@ p.text-author-name {
 }
 
 .refresh-btn {
-  background-color: #1b1b1d;
-  border: 1px solid transparent;
+  background: transparent;
+  border: 1px solid #fff;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -36,7 +36,7 @@ p.text-author-name {
 }
 
 .refresh-btn:hover {
-  background-color: #a1a1a1;
+  background-color: rgb(50, 50, 50);
   border: 1px solid #fff;
   color: #fff;
 }
