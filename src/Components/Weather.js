@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import './Weather.css';
-
 const CORS_HEADER = "https://cors-anywhere.herokuapp.com/";
-// const DARKSKY_API_CALL = "https://api.darksky.net/forecast/640bddbf1aa37eddd8253e47a46a46a8/";
 const IPGEO_KEY = "3f061a38048d48d2ba1d660be4ba55f7";
+const OW_API = "13b0886c7c035390785605fc1c637712";
+
 
 class Weather extends React.Component {
   constructor(props) {
@@ -15,40 +15,26 @@ class Weather extends React.Component {
       description: "",
       windSpeed: "",
       humidity: "",
+      showWeatherForecast: false,
+      degreeType: "celsius",
+
+      fullData: [],
+      dailyData: [],
     };
     this.getLocation = this.getLocation.bind(this);
     this.getWeatherData = this.getWeatherData.bind(this);
+    this.getCountryFlag = this.getCountryFlag.bind(this);
   }
 
-
   getLocation = () => {
-      axios
+    axios
       .get("https://ip.zxq.co/") //awesome API to get Geolocation with no rate limit!
       .then(response => {
-          this.setState({
-            city: response.data.city,
-            region: response.data.region,
-            country: response.data.country,
-            loc: response.data.loc,
-          });
-        })
-        .catch(error => {
-          console.log(error);
-        });
-  };
-
-  getWeatherData = () => {
-    axios
-      // .get(CORS_HEADER + DARKSKY_API_CALL + this.state.latitude + "," + this.state.longitude + "?units=si")
-      //https://api.openweathermap.org/data/2.5/weather?lat="+ this.state.latitude + "&lon="+this.state.longitude+"&units=metric&appid=13b0886c7c035390785605fc1c637712"
-      .get(CORS_HEADER + "api.openweathermap.org/data/2.5/weather?q="+this.state.city+ ","+this.state.country+ "&units=metric&appid=13b0886c7c035390785605fc1c637712")
-      .then(response => {
         this.setState({
-          temp: response.data.main.temp,
-          description: response.data.weather[0].main,
-          id: response.data.weather[0].id,
-          humidity: response.data.main.humidity,
-          wind: response.data.wind.speed
+          city: response.data.city,
+          region: response.data.region,
+          country: response.data.country,
+          loc: response.data.loc
         });
       })
       .catch(error => {
@@ -56,17 +42,60 @@ class Weather extends React.Component {
       });
   };
 
+  getWeatherData = () => {
+    const city = this.state.city;
+    const country = this.state.country;
+
+    axios
+      .get( CORS_HEADER + `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${OW_API}` )
+      .then(response => {
+        this.setState({
+          temp: response.data.main.temp,
+          description: response.data.weather[0].main.list,
+          id: response.data.weather[0].id,
+          humidity: response.data.main.humidity,
+          wind: response.data.wind.speed
+        });
+        //console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  updateForecastDegree = event => {
+    this.setState({
+      degreeType: event.target.value
+    }, () => console.log(this.state))
+  }
+
+  componentDidMount = () => {
+    const city = this.state.city;
+    const country = this.state.country;
+    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&APPID=${OW_API}`
+
+    fetch(weatherURL)
+      .then(res => res.json())
+      .then(data => {
+        const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
+        this.setState({
+          fullData: data.list,
+          dailyData: dailyData
+        }); //() => console.log(this.state))
+      })
+  }
+
   getCountryFlag = () => {
     axios
-    .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEO_KEY}`)
-    .then(res=> {
-      this.setState({
-          country_flag: res.data.country_flag,
+      .get(`https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEO_KEY}`)
+      .then(res => {
+        this.setState({
+          country_flag: res.data.country_flag
+        });
+      })
+      .catch(error => {
+        console.log(error);
       });
-    })
-    .catch(error => {
-      console.log(error);
-    })
   };
 
   UNSAFE_componentWillMount() {
@@ -75,37 +104,70 @@ class Weather extends React.Component {
     this.getCountryFlag();
   }
 
+
   render() {
 
     let hr = new Date().getHours();
     let tod = hr > 17 ? "night" : "day";
-    
-    const { city, region, country_flag, temp, description, id, wind, humidity } = this.state;
 
-    const WeatherData = ({ city, region, country_flag, temp, description, id, humidity }) => 
+    const { showWeatherForecast } = this.state;
+    const { city,  region,  country_flag,  temp,  description,  id,  wind,  humidity  } = this.state;
+
+    const WeatherData = ({ city, region, country_flag, temp, description, id, humidity  }) => (
       <div>
-          <h4 className="location"> {city} </h4>
-          <h4 className="region-country"> {region},
-            <img alt="country-flag" src= {country_flag} style={{height: '1rem', marginLeft: '0.3rem'}} />
-          </h4> 
-          <i id='icon' className={'wi wi-owm-' + tod + '-' + id}></i>
-          <h3 className="desc"> {description} </h3>
-          <h2 className="temp"> {temp}°</h2>
-          <h5 className="humidity">Humidity: {humidity}%</h5>   
-      </div>;
+        <p className="location"> {city}, </p>
+        <p className="region-country"> {region},
+          <img
+            alt="country-flag"
+            src={country_flag}
+            style={{ height: "1rem", marginLeft: "0.3rem" }}
+          />
+        </p>
+        <i id="icon" className={"wi wi-owm-" + tod + "-" + id}></i>
+        <h3 className="desc"> {description} </h3>
+        <p className="temp"> {Math.round(temp)}°</p>
+        <p className="humidity">Humidity: {humidity}%</p>
+      </div>
+    );
+
+    const DayCard = ({ reading }) => (
+      <div className="weatherCard">
+          <p className="location">{city}</p>
+          <i className={"wi wi-owm-" + tod + "-" + id}></i>
+          <h2>{Math.round(reading.main.temp)}°C</h2>
+          <p className="card-text">{reading.weather[0].description}</p>
+      </div>
+    );
     
-    return <div className="card">
-      <div className="weatherWrapper">
-        <WeatherData city={city} region={region} country_flag={country_flag}
-                    /* from OpenWeatherMap API CALL */
-                    temp={temp}
-                    description={description}
-                    id={id}
-                    wind={wind}
-                    humidity={humidity}
-        />
+
+    return (
+      <div className="card">
+        <div className="weatherWrapper">
+          <WeatherData
+           /* from IP.ZQ.CO */
+            city={city}
+            region={region}
+            country_flag={country_flag}
+            /* from OpenWeatherMap API CALL */
+            temp={temp}
+            description={description}
+            id={id}
+            wind={wind}
+            humidity={humidity}  
+          />
+        <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast })}>Weekly Forecast</button>
+        <br/><br/>
+        <div className="forecastWrapper">
+          { 
+              showWeatherForecast &&
+                  (this.state.dailyData.map((reading, index) => 
+                      <DayCard reading = { reading } key = { index }/>
+                  ))
+          }
+          </div>
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 

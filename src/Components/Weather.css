@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400&display=swap');
 
 .weatherWrapper {
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     position: absolute;
     right: 1rem;
     text-align: center;
@@ -20,6 +20,33 @@
     padding: 0.2em;
 }
 
+.weeklyBtn {
+    background: rgb(50, 50, 50);
+    border: 1px solid gray;
+    color: white;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.forecastWrapper {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    align-content: space-between;
+    background-color: rgb(176, 248, 224);
+    color: #000;
+    font-size: 1rem;
+    margin-right: -1px;
+    margin-left: -20rem;
+}
+
+.weatherCard {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
 
 @media only screen and (max-width: 600px) {
     .weatherWrapper{

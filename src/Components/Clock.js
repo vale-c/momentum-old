@@ -27,13 +27,13 @@ class Clock extends React.Component {
 		return <Grid>
 				<Row className="clockBox">
 					<Col className="clockHours">
-				    <h1>{(h === 12 ? '12': h%12)}:</h1>
+						<h1>{(h === 12 ? '12': h%12)}:</h1>
 					</Col>
 					<Col className="clockMinutes">
-					  <h1>{(m < 10 ? '0' + m : m)}</h1>
+						<h1>{(m < 10 ? '0' + m : m)}</h1>
 					</Col>
 					<Col className="clockAmOrPm">
-					  <h3 className="am-pm">{(h < 12 ? 'AM' : 'PM')}</h3>
+						<h3 className="am-pm">{(h < 12 ? 'AM' : 'PM')}</h3>
 					</Col>
 				</Row>
 			</Grid>;

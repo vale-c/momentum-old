@@ -15,7 +15,7 @@
     /* fonts */
     color: #fff;
     font-family: 'Anton', sans-serif;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 400;
     letter-spacing: 0.5rem;
     text-shadow: rgb(50, 50, 50) 0px 0px 10px;
@@ -26,7 +26,7 @@
     flex-flow: wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 9.4rem;
+    margin-top: 7.2rem;
     letter-spacing: 0.2rem;
     font-weight: 300;
     margin-left: 0.6rem;
