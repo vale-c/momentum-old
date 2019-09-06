@@ -72,7 +72,7 @@ class Weather extends React.Component {
   componentDidMount = () => {
     const city = this.state.city;
     const country = this.state.country;
-    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&APPID=${OW_API}`
+    const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&APPID=${OW_API}`
 
     fetch(weatherURL)
       .then(res => res.json())
