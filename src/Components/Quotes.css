@@ -81,11 +81,13 @@ p.text-author-name {
 }
 
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+@media only screen and (max-width: 600px) { 
   .quoteWrapper {
     font-size: 0.5rem;
-    bottom: 0px;
+    font-weight: 300;
+    bottom: 0;
+  }
+  p.text-author-name {
+    margin-top: 0;
   }
 }

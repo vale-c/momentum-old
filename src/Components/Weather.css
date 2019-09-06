@@ -31,7 +31,6 @@
     cursor: pointer;
     padding: 5px 15px;
     border-radius: 3px;
-    outline: none;
 }
 
 .weeklyBtn:hover {
@@ -58,7 +57,26 @@
 
 @media only screen and (max-width: 600px) {
     .weatherWrapper{
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         font-weight: 300; 
+    }
+
+    .forecastWrapper {
+        font-size: 0.5rem;
+        margin-right: -1px;
+        margin-left: -9rem;
+    }
+
+    .weatherCard {
+        padding: 0.5rem;
+    }
+
+    .weeklyBtn {
+        padding: 3px 8px;
+        font-size: 0.5rem;
+    }
+
+    .weeklyBtn:hover {
+        border: 1px solid #ffffff;
     }
 }
