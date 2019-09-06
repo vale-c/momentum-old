@@ -47,7 +47,7 @@ class Weather extends React.Component {
     const country = this.state.country;
 
     axios
-      .get( CORS_HEADER + `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${OW_API}` )
+      .get(CORS_HEADER + `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${OW_API}`)
       .then(response => {
         this.setState({
           temp: response.data.main.temp,
@@ -74,7 +74,7 @@ class Weather extends React.Component {
     const country = this.state.country;
     const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&APPID=${OW_API}`
 
-    fetch(weatherURL)
+    fetch(CORS_HEADER + weatherURL)
       .then(res => res.json())
       .then(data => {
         const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
