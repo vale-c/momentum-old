@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import './Weather.css';
 import WeatherCard from './WeatherCard';
+//import WeatherForm from './WeatherForm';
 
 const CORS_HEADER = "https://cors-anywhere.herokuapp.com/";
 const IPGEO_KEY = "3f061a38048d48d2ba1d660be4ba55f7";
@@ -139,6 +140,9 @@ class Weather extends React.Component {
             wind={wind}
             humidity={humidity}  
           />
+
+          {/* <WeatherForm /> */}
+
         <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast })}><span role="img" aria-label="temp-emoji">Weekly 🌡️</span></button>
         <br/><br/>
         <div className="forecastWrapper">

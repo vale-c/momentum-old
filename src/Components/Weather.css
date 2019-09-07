@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Josefin+Sans&display=swap');
 
 .weatherWrapper {
-    font-family: 'Josefin Sans', 'Helvetica', sans-serif;
+    font-family: 'Fira Mono', 'Helvetica', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     position: absolute;
@@ -47,8 +47,8 @@
     background-color: rgba(14, 15, 16, 0.93);
     color: #fff;
     font-size: 1rem;
-    margin-right: -10px;
-    margin-left: -25rem;
+    margin-right: -15px;
+    margin-left: -50rem;
 }
 
 .weatherCard {
@@ -57,16 +57,26 @@
     padding: 1rem;
 }
 
-@media only screen and (max-width: 650px) {
+h3.weekDay {
+    margin-bottom: -10px;
+}
+
+p.minMax {
+    font-family: 'Fira Mono', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 984px) {
     .weatherWrapper {
         font-size: 0.5rem;
         font-weight: 300;
     }
 
     .forecastWrapper {
-        font-size: 0.5rem;
-        margin-right: -1px;
-        margin-left: -9rem;
+        font-size: 0.6rem;
+        margin-right: -10px;
+        margin-left: -48rem;
     }
 
     .weatherCard {
@@ -77,8 +87,58 @@
         padding: 3px 8px;
         font-size: 0.5rem;
     }
+}
 
-    .weeklyBtn:hover {
-        border: 1px solid #ffffff;
+@media only screen and (max-width: 896px) {
+    .weatherWrapper {
+        font-size: 0.3rem;
+        font-weight: 300;
     }
+
+    .forecastWrapper {
+        font-size: 0.4rem;
+        margin-right: -10px;
+        margin-left: -20rem;
+    }
+
+    .weatherCard {
+        font-size: 0.4rem;
+        padding: 5px;
+    }
+
+    p.minMax {
+        font-size: 0.4rem;
+        font-weight: 300;
+    }
+
+    .weeklyBtn {
+        padding: 3px 8px;
+        font-size: 0.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 456px) {
+    .weatherWrapper {
+        font-size: 0.2rem;
+    }
+
+    .forecastWrapper {
+        margin-right: -5px;
+        margin-left: -16rem;
+    }
+
+    .weatherCard {
+        font-size: 0.2rem;
+        padding: 1px;
+    }
+
+    p.minMax {
+        font-size: 0.3rem;
+    }
+
+    h3.weekDay {
+        margin-bottom: -5px;
+    }
+
 }
