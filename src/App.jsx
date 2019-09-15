@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Clock from './Components/Clock';
-import Weather from "./Components/Weather.js";
-import Greeting from './Components/Greeting';
-import Quotes from './Components/Quotes';
-import Todos from './Components/Todos';
+import Clock from './components/Clock/Clock.js';
+import Weather from "./components/Weather/Weather.js";
+import Greeting from './components/Greeting/Greeting.js';
+import Quotes from './components/Quotes/Quotes.js';
+import Todos from './components/Todos/Todos.js';
 import uuid from 'uuid';
 import './App.css';
 

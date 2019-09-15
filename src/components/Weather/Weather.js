@@ -115,7 +115,7 @@ class Weather extends React.Component {
           <img
             alt="country-flag"
             src={country_flag}
-            style={{ height: "1rem", marginLeft: "0.3rem" }}
+            className="country-flag"
           />
         </p>
         <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
@@ -126,7 +126,7 @@ class Weather extends React.Component {
     );
 
     return (
-      <div className="card">
+      <div className="weatherData">
         <div className="weatherWrapper">
           <WeatherData
            /* from IP.ZQ.CO */
@@ -140,6 +140,7 @@ class Weather extends React.Component {
             wind={wind}
             humidity={humidity}  
           />
+        
 
           {/* <WeatherForm /> */}
 

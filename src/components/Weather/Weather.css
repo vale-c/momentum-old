@@ -20,6 +20,11 @@
     padding: 0.2em;
 }
 
+.country-flag {
+    height: 1rem; 
+    margin-left: 0.3rem;
+}
+
 .card-text {
     margin-top: -0.2rem;
 }
@@ -49,6 +54,7 @@
     font-size: 1rem;
     margin-right: -15px;
     margin-left: -50rem;
+    top: 0;
 }
 
 .weatherCard {
@@ -106,6 +112,10 @@ p.minMax {
         padding: 5px;
     }
 
+    #icon {
+        font-size: 20px;
+    }
+
     p.minMax {
         font-size: 0.4rem;
         font-weight: 300;
@@ -114,6 +124,10 @@ p.minMax {
     .weeklyBtn {
         padding: 3px 8px;
         font-size: 0.5rem;
+    }
+
+    .country-flag {
+        height: 0.5rem;
     }
 
 }
@@ -131,6 +145,11 @@ p.minMax {
     .weatherCard {
         font-size: 0.2rem;
         padding: 1px;
+    }
+
+    .weeklyBtn {
+        font-size: 0.3rem;
+        padding: 1px 5px;
     }
 
     p.minMax {
