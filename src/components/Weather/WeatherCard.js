@@ -19,7 +19,9 @@ class Card extends React.Component {
             <h3 className="weekDay">{moment(newDate).format('dddd')}</h3>
             <p className="currentDate">{moment(newDate).format('MMMM Do')}</p>
             <i id="icon" className={imgURL}></i>
-            <p className="minMax"><strong>Max</strong> {Math.round(this.props.day.main.temp_max)}°C / <strong>Min</strong> {Math.round(this.props.day.main.temp_min)}°C</p>
+            <p className="minMax">
+              <strong>Max</strong> {Math.round(this.props.day.main.temp_max)} °C / 
+              <strong>Min</strong> {Math.round(this.props.day.main.temp_min)}°C</p>
             <h4 className="card-text">{this.props.day.weather[0].description}</h4>
       </div>
     )

@@ -51,16 +51,15 @@
     align-content: space-between;
     background-color: rgba(14, 15, 16, 0.93);
     color: #fff;
-    font-size: 1rem;
     margin-right: -15px;
-    margin-left: -50rem;
+    margin-left: -52rem;
     top: 0;
 }
 
 .weatherCard {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.6rem;
 }
 
 h3.weekDay {
@@ -69,7 +68,7 @@ h3.weekDay {
 
 p.minMax {
     font-family: 'Fira Mono', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
 }
 
