@@ -8,7 +8,7 @@
     right: 1rem;
     text-align: center;
     top: 0;
-    text-shadow: rgb(50, 50, 50) 0px 0px 10px;
+    text-shadow: rgb(50, 50, 50) 0px 0px 15px;
 }
 
 #icon {
@@ -52,7 +52,7 @@
     background-color: rgba(14, 15, 16, 0.93);
     color: #fff;
     margin-right: -15px;
-    margin-left: -52rem;
+    margin-left: -36rem;
     top: 0;
 }
 
@@ -66,10 +66,15 @@ h3.weekDay {
     margin-bottom: -10px;
 }
 
-p.minMax {
+p.min, p.max {
     font-family: 'Fira Mono', sans-serif;
+    margin: 0.3rem;
     font-size: 1rem;
     font-weight: 300;
+}
+
+.card-text {
+    margin-top: 0.3rem;
 }
 
 @media only screen and (max-width: 984px) {
