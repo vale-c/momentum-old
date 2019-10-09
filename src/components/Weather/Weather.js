@@ -22,7 +22,7 @@ class Weather extends React.Component {
       days: []
     };
     this.getLocation = this.getLocation.bind(this);
-    this.getWeatherData = this.getWeatherData.bind(this);
+    this.getForecast = this.getForecast.bind(this);
     this.getCountryFlag = this.getCountryFlag.bind(this);
   }
 
@@ -42,7 +42,7 @@ class Weather extends React.Component {
       });
   };
 
-  getWeatherData = () => {
+  componentDidMount = () => {
     const city = this.state.city;
     const country = this.state.country;
 
@@ -56,7 +56,7 @@ class Weather extends React.Component {
           humidity: response.data.main.humidity,
           wind: response.data.wind.speed
         });
-        //console.log(response.data);
+        console.log(this.state.city);
       })
       .catch(error => {
         console.log(error);
@@ -64,14 +64,14 @@ class Weather extends React.Component {
   };
 
 
-  componentDidMount = () => {
+  getForecast= () => {
     const city = this.state.city;
     const country = this.state.country;
     const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&APPID=${OW_API}`
 
     fetch(CORS_HEADER + weatherURL)
       .then(res => res.json())
-      .then(data => {   
+      .then(data => {
         //console.log("Data List Loaded", data.list)
         const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
         this.setState({
@@ -96,12 +96,11 @@ class Weather extends React.Component {
 
   UNSAFE_componentWillMount() {
     this.getLocation();
-    this.getWeatherData();
+    this.getForecast();
     this.getCountryFlag();
   }
 
   render() {
-
     let hour = new Date().getHours();
     let timeOfDay = hour > 17 ? "night" : "day";
 
@@ -138,16 +137,16 @@ class Weather extends React.Component {
             description={description}
             id={id}
             wind={wind}
-            humidity={humidity}  
+            humidity={humidity}
           />
-        
+
 
           {/* <WeatherForm /> */}
 
         <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast })}><span role="img" aria-label="temp-emoji">Weekly 🌡️</span></button>
         <br/><br/>
         <div className="forecastWrapper">
-          { 
+          {
               showWeatherForecast &&  this.state.days.map((day, index) => <WeatherCard day={day} key={index}/>)
           }
           </div>
