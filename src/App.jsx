@@ -10,20 +10,20 @@ import './App.css';
 class App extends Component {
   state = {
     todos: [{
-      id: uuid.v4(),
-      title: 'Hey Human Friend 👁️🖖',
-      completed: false,
-    },
-    {
+    //   id: uuid.v4(),
+    //   title: 'Hey Human Friend 👁️🖖',
+    //   completed: false,
+    // },
+    //{
       id: uuid.v4(),
       title: 'Add here your todos! 📃🖊️',
       completed: false,
     },
-    {
-      id: uuid.v4(),
-      title: 'It is a nice way to keep track of all the stuff you have to do.😉👍',
-      completed: false,
-    }
+    // {
+    //   id: uuid.v4(),
+    //   title: 'It is a nice way to keep track of all the stuff you have to do.😉👍',
+    //   completed: false,
+    // }
     ],
   };
 
