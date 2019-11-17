@@ -52,7 +52,7 @@
     background-color: rgba(14, 15, 16, 0.93);
     color: #fff;
     margin-right: -15px;
-    margin-left: -37rem;
+    margin-left: calc(-30vw);
     top: 0;
 }
 
