@@ -18,6 +18,7 @@ class Weather extends React.Component {
       description: "",
       windSpeed: "",
       humidity: "",
+      country_flag: "",
       showWeatherForecast: false,
       days: []
     };
@@ -33,7 +34,7 @@ class Weather extends React.Component {
         this.setState({
           city: response.data.city,
           region: response.data.region,
-          country: response.data.country,
+          //country: response.data.country,
         });
         //console.log(response);
       })
@@ -110,12 +111,12 @@ class Weather extends React.Component {
     const WeatherData = ({ city, region, country_flag, temp, description, id, humidity  }) => (
       <div>
         <p className="location"> {city}, </p>
-        <p className="region-country"> {region},
-          <img
+        <p className="region-country"> {region}
+          {/* <img
             alt="country-flag"
             src={country_flag}
             className="country-flag"
-          />
+          /> */}
         </p>
         <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
         <h3 className="desc"> {description} </h3>
