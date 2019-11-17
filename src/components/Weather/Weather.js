@@ -45,7 +45,8 @@ class Weather extends React.Component {
           currentComponent.setState({
             lat: res.data.lat,
             lon: res.data.lon,
-            city: res.data.address.town,
+            city: res.data.address.city,
+            town: res.data.address.town,
             region: res.data.address.state,
             country: res.data.address.country
           });
@@ -60,7 +61,7 @@ class Weather extends React.Component {
               humidity: response.data.main.humidity,
               wind: response.data.wind.speed
             });
-          //Weekly Weather Data
+          //Weekly Weather Forecast Data
           return fetch(PROXY + `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&APPID=${OW_API}`);
         })
 
@@ -85,6 +86,7 @@ class Weather extends React.Component {
       timeout: 5000,
       maximumAge: 10000
     };
+    
     // GEOLOCATION API (HTML5)
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(locInfo, error, options);
@@ -96,11 +98,11 @@ class Weather extends React.Component {
     let timeOfDay = hour > 17 ? "night" : "day";
 
     const { showWeatherForecast } = this.state;
-    const { city, region, temp, description, id, wind, humidity } = this.state;
+    const { city, town, region, temp, description, id, wind, humidity } = this.state;
 
-    const WeatherData = ({ city, region, temp, description, id, humidity }) => (
+    const WeatherData = ({  city, town, region, temp, description, id, humidity }) => (
       <div>
-        <p className="location"> {city} </p>
+        <p className="locationType"> { {town} ? town : {city}}</p>
         <p className="region-country">{region}</p>
         <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
         <h3 className="desc">{description}</h3>
@@ -115,6 +117,7 @@ class Weather extends React.Component {
           <WeatherData
             /* from IP.ZQ.CO */
             city={city}
+            town={town}
             region={region}
             /* from OpenWeatherMap API CALL */
             temp={temp}
