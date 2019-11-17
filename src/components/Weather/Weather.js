@@ -5,14 +5,14 @@ import WeatherCard from './WeatherCard';
 
 const PROXY = "https://cors-anywhere.herokuapp.com/";
 const OW_API = "13b0886c7c035390785605fc1c637712";
-//const DS_API = "930e15060e75d78b3b7cc44da030601c";
+//const DarkSky_API = "930e15060e75d78b3b7cc44da030601c";
 
 class Weather extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       lat: "",
-      lng: "",
+      lon: "",
       region: "",
       city: "",
       temp: "",
@@ -22,103 +22,73 @@ class Weather extends React.Component {
       showWeatherForecast: false,
       days: []
     };
-    this.findCoordinates = this.findCoordinates.bind(this);
-    //this.getIpLocation = this.getIpLocation.bind(this);
-    this.getForecast = this.getForecast.bind(this);
   }
 
-  // getIpLocation = () => {
-  //   axios
-  //     .get("https://ip.zxq.co/") //awesome API to get Geolocation with no rate limit!
-  //     .then(response => {
-  //       this.setState({
-  //         city: response.data.city,
-  //         region: response.data.region
-  //       });
-  //       //console.log(response);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // };
-
-  findCoordinates = () => {
+  componentDidMount = () => {
     let currentComponent = this; //caching "this" to prevent from Error cannot setState of "undefined"!
 
-    function locInfo(pos)  {
+    function locInfo(pos)  { 
+      //Getting LAT & LON using GeoLocation API embedded into html5
       let crd = pos.coords;
-      const lng = crd.longitude;
+      
+      const lon = crd.longitude;
       const lat = crd.latitude;
 
-      axios(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
-        .then(res => {
-            currentComponent.setState({
-              region: res.data.address.state,
-              city: res.data.address.town,
-              country: res.data.address.country
-            });
-            console.log(res);
+      axios
+        .get(PROXY + `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}` , {
+                      headers: {
+                        'Access-Control-Allow-Origin': true,
+                      },
+            })
+        // Geo Coord Info
+        .then((res) => {
+          currentComponent.setState({
+            lat: res.data.lat,
+            lon: res.data.lon,
+            city: res.data.address.town,
+            region: res.data.address.state,
+            country: res.data.address.country
+          });
+          //current Weather Data
+          return axios.get(PROXY+`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${OW_API}`);
         })
-    }
+        .then((response) => {
+            currentComponent.setState({
+              temp: response.data.main.temp,
+              description: response.data.weather[0].main.list,
+              id: response.data.weather[0].id,
+              humidity: response.data.main.humidity,
+              wind: response.data.wind.speed
+            });
+          //Weekly Weather Data
+          return fetch(PROXY + `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&APPID=${OW_API}`);
+        })
 
+        .then(res => res.json())
+          .then(data => {
+            const dailyData = data.list.filter(reading =>
+              reading.dt_txt.includes("18:00:00")
+            );
+            currentComponent.setState({
+              days: dailyData
+            });
+          });
+        
+    }
+    //error parameters for geolocation call
     function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
-
+    //option parameters for geolocation call
     var options = {
       enableHighAccuracy: true,
       timeout: 5000,
       maximumAge: 10000
     };
-
+    // GEOLOCATION API (HTML5)
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(locInfo, error, options);
     }
-  
-  }
-  
-  componentDidMount = () => {
-    const city = this.state.city;
-    const country = this.state.country;
-
-    axios
-      .get(PROXY+`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${OW_API}`)
-      .then(response => {
-        this.setState({
-          temp: response.data.main.temp,
-          description: response.data.weather[0].main.list,
-          id: response.data.weather[0].id,
-          humidity: response.data.main.humidity,
-          wind: response.data.wind.speed
-        });
-        //console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
-  getForecast = () => {
-    const city = this.state.city;
-    const country = this.state.country;
-    const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&APPID=${OW_API}`;
-
-    fetch(PROXY + weatherURL)
-      .then(res => res.json())
-      .then(data => {
-        const dailyData = data.list.filter(reading =>
-          reading.dt_txt.includes("18:00:00")
-        );
-        this.setState({
-          days: dailyData
-        });
-      });
-  };
-
-  UNSAFE_componentWillMount() {
-    this.findCoordinates();
-    //this.getIpLocation();
-    this.getForecast();
   }
 
   render() {
@@ -130,7 +100,7 @@ class Weather extends React.Component {
 
     const WeatherData = ({ city, region, temp, description, id, humidity }) => (
       <div>
-        <p className="location">{city}</p>
+        <p className="location"> {city} </p>
         <p className="region-country">{region}</p>
         <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
         <h3 className="desc">{description}</h3>

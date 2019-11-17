@@ -24,7 +24,7 @@ class WeatherForm extends React.Component {
     render() {
         return (
             <div>
-             <form className="form-inline" onSubmit={this.searchLocation}>
+            <form className="form-inline" onSubmit={this.searchLocation}>
                 <div className="form-group">
                     <input type="search"
                         className="form-control"
@@ -33,7 +33,7 @@ class WeatherForm extends React.Component {
                         placeholder="Search for a city..." />       
                     <button className="btn btn-primary btn-sm">Submit</button>
                 </div>
-             </form>
+            </form>
             </div>
         )
     }
