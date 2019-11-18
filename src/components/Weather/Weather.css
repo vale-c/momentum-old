@@ -99,21 +99,22 @@ p.min, p.max {
     }
 }
 
-@media only screen and (max-width: 896px) {
+@media only screen and (max-width: 944px) {
     .weatherWrapper {
-        font-size: 0.3rem;
+        font-size: 0.8rem;
         font-weight: 300;
+        margin-right: calc(-1vw);
     }
 
     .forecastWrapper {
         font-size: 0.4rem;
         margin-right: -10px;
-        margin-left: -14rem;
+        margin-left: -25rem;
     }
 
     .weatherCard {
-        font-size: 0.4rem;
-        padding: 5px;
+        font-size: 0.8rem;
+        padding: 10px;
     }
 
     #icon {
@@ -121,7 +122,7 @@ p.min, p.max {
     }
 
     p.min, p.max {
-        font-size: 0.4rem;
+        font-size: 0.8rem;
         font-weight: 300;
     }
 
@@ -130,34 +131,31 @@ p.min, p.max {
         font-size: 0.5rem;
     }
 
-    .country-flag {
-        height: 0.5rem;
-    }
-
 }
 
 @media only screen and (max-width: 456px) {
     .weatherWrapper {
-        font-size: 0.2rem;
+        font-size: 0.5rem;
+        margin-right: calc(-3vw);
     }
 
     .forecastWrapper {
-        margin-right: -5px;
-        margin-left: -11rem;
+        margin-right: 0;
+        margin-left: calc(-50vw);
     }
 
     .weatherCard {
-        font-size: 0.2rem;
-        padding: 1px;
+        font-size: 0.47rem;
+        padding: 5px;
     }
 
     .weeklyBtn {
-        font-size: 0.3rem;
-        padding: 1px 5px;
+        font-size: 0.5rem;
+        padding: 5px;
     }
 
     p.minMax {
-        font-size: 0.3rem;
+        font-size: 0.7rem;
     }
 
     h3.weekDay {

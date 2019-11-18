@@ -3,7 +3,7 @@ import './Quotes.css';
 import axios from 'axios';
 
 const momentumAppLink = "https://www.momentumdash.netlify.com";
-
+const PROXY = "https://cors-anywhere.herokuapp.com/";
 class Quotes extends React.Component {
   constructor(props) {
     super(props);
@@ -35,9 +35,7 @@ class Quotes extends React.Component {
 
   getQuote = () => {
     axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
-      )
+      .get(PROXY + "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
       .then(response => {
         this.setState({
           quote: response.data.quoteText,
@@ -135,10 +133,10 @@ class Quotes extends React.Component {
 
     return <div className="quoteContainer">
         <div className="quoteWrapper" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
-          { (this.state.quote !== undefined && this.state.author!== undefined) ? (
+          { (this.state.quote !== undefined || this.state.author!== undefined) ? (
             <QuoteText quote={quote} author={author} /> 
           ) : ( 
-            <QuoteText quote={"Uhm, no quotes for now 🤔...Try again in a few secs"} author = {"Vale"}/>
+            <QuoteText quote={"Uhm, no quotes for now 🤔...Try again in a few seconds!"} author = {"Vale"}/>
           )}
           
           {

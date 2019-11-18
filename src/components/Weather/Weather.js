@@ -35,11 +35,7 @@ class Weather extends React.Component {
       const lat = crd.latitude;
 
       axios
-        .get(PROXY + `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}` , {
-                      headers: {
-                        'Access-Control-Allow-Origin': true,
-                      },
-            })
+        .get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
         // Geo Coord Info
         .then((res) => {
           currentComponent.setState({
@@ -62,9 +58,8 @@ class Weather extends React.Component {
               wind: response.data.wind.speed
             });
           //Weekly Weather Forecast Data
-          return fetch(PROXY + `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&APPID=${OW_API}`);
+          return fetch(PROXY + `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${OW_API}`);
         })
-
         .then(res => res.json())
           .then(data => {
             const dailyData = data.list.filter(reading =>
@@ -98,11 +93,11 @@ class Weather extends React.Component {
     let timeOfDay = hour > 17 ? "night" : "day";
 
     const { showWeatherForecast } = this.state;
-    const { city, town, region, temp, description, id, wind, humidity } = this.state;
+    const { town, city, region, temp, description, id, wind, humidity } = this.state;
 
-    const WeatherData = ({  city, town, region, temp, description, id, humidity }) => (
+    const WeatherData = ({  town, city, region, temp, description, id, humidity }) => (
       <div>
-        <p className="locationType"> { {town} ? town : {city}}</p>
+        <p className="locationType"> { {town} ? town : {city} } </p>
         <p className="region-country">{region}</p>
         <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
         <h3 className="desc">{description}</h3>
@@ -116,8 +111,7 @@ class Weather extends React.Component {
         <div className="weatherWrapper">
           <WeatherData
             /* from IP.ZQ.CO */
-            city={city}
-            town={town}
+            town = {{town} ? town : {city}}
             region={region}
             /* from OpenWeatherMap API CALL */
             temp={temp}
