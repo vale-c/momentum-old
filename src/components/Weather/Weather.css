@@ -51,8 +51,7 @@
     align-content: space-between;
     background-color: rgba(14, 15, 16, 0.93);
     color: #fff;
-    margin-right: -15px;
-    margin-left: calc(-30vw);
+    margin: 0;
     top: 0;
 }
 
@@ -77,89 +76,22 @@ p.min, p.max {
     margin-top: 0.3rem;
 }
 
-@media only screen and (max-width: 984px) {
-    .weatherWrapper {
-        font-size: 0.5rem;
-        font-weight: 300;
-    }
-
-    .forecastWrapper {
-        font-size: 0.6rem;
-        margin-right: -10px;
-        margin-left: -48rem;
-    }
-
-    .weatherCard {
-        padding: 0.5rem;
-    }
-
-    .weeklyBtn {
-        padding: 3px 8px;
-        font-size: 0.5rem;
-    }
+.close-thick {
+    background-color: transparent;
+    border: none;
+    color: #fff ;
+    font: 18px/100% 'Fira Mono', sans-serif;
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #777;
+    top: 5px;
 }
 
-@media only screen and (max-width: 944px) {
-    .weatherWrapper {
-        font-size: 0.8rem;
-        font-weight: 300;
-        margin-right: calc(-1vw);
-    }
-
-    .forecastWrapper {
-        font-size: 0.4rem;
-        margin-right: -10px;
-        margin-left: -25rem;
-    }
-
-    .weatherCard {
-        font-size: 0.8rem;
-        padding: 10px;
-    }
-
-    #icon {
-        font-size: 20px;
-    }
-
-    p.min, p.max {
-        font-size: 0.8rem;
-        font-weight: 300;
-    }
-
-    .weeklyBtn {
-        padding: 3px 8px;
-        font-size: 0.5rem;
-    }
-
+.close-thick:after {
+    content: '✖'; /* UTF-8 symbol */
 }
 
-@media only screen and (max-width: 456px) {
-    .weatherWrapper {
-        font-size: 0.5rem;
-        margin-right: calc(-3vw);
-    }
-
-    .forecastWrapper {
-        margin-right: 0;
-        margin-left: calc(-50vw);
-    }
-
-    .weatherCard {
-        font-size: 0.47rem;
-        padding: 5px;
-    }
-
-    .weeklyBtn {
-        font-size: 0.5rem;
-        padding: 5px;
-    }
-
-    p.minMax {
-        font-size: 0.7rem;
-    }
-
-    h3.weekDay {
-        margin-bottom: -5px;
-    }
-
+.close-thick:hover {
+    color: red;
 }

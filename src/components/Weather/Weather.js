@@ -1,8 +1,8 @@
 import axios from 'axios';
 import './Weather.css';
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import useModal from 'react-hooks-use-modal';
-import styles from './styles.module.css';
+// import styles from './styles.module.css';
 import WeatherCard from './WeatherCard';
 
 const PROXY = "https://cors-anywhere.herokuapp.com/";
@@ -21,7 +21,6 @@ class Weather extends React.Component {
       description: "",
       windSpeed: "",
       humidity: "",
-      showWeatherForecast: false,
       days: []
     };
   }
@@ -90,27 +89,33 @@ class Weather extends React.Component {
     }
   }
 
+
   render() {
     const WeatherModal = () => {
     const [Modal, open, close] = useModal('root');
     return (
-    <div>
-      <button onClick={open}>OPEN</button>
-      <Modal>
-        <div className={styles.modal}>
-          <h1>Title</h1>
-          <p>This is a customizable modal.</p>
-          <button onClick={close}>CLOSE</button>
-        </div>
-      </Modal>
-    </div>
+      <div>
+        <button className="weeklyBtn" onClick={open}>
+          <span role="img" aria-label="temp-emoji">Weekly 🌡️</span>
+        </button>
+
+        <Modal>
+          <div className="forecastWrapper">
+              {this.state.days.map((day, index) => (
+                  <WeatherCard day={day} key={index} />
+              ))}
+
+          </div>
+
+          <button className="close-thick" onClick={close}></button>
+        </Modal>
+      </div>
     );
     };
 
     let hour = new Date().getHours();
     let timeOfDay = hour > 17 ? "night" : "day";
 
-    const { showWeatherForecast } = this.state;
     const { town, city, region, temp, description, id, wind, humidity } = this.state;
 
     const WeatherData = ({  town, city, region, temp, description, id, humidity }) => (
@@ -139,23 +144,8 @@ class Weather extends React.Component {
               humidity={humidity}
             />
 
-          <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast }) } >
-            <span role="img" aria-label="temp-emoji">
-              Weekly 🌡️
-            </span>
-          </button>
-
-          <br />
-          <br />
-
           <WeatherModal/>
 
-          <div className="hook"></div>
-          <div className="forecastWrapper">
-            {showWeatherForecast && this.state.days.map((day, index) => (
-                <WeatherCard day={day} key={index} />
-            ))}
-          </div>
         </div>
       </div>
     );
