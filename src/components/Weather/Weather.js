@@ -1,6 +1,8 @@
 import axios from 'axios';
-import React from 'react';
 import './Weather.css';
+import React, { useState, useCallback } from 'react';
+import useModal from 'react-hooks-use-modal';
+import styles from './styles.module.css';
 import WeatherCard from './WeatherCard';
 
 const PROXY = "https://cors-anywhere.herokuapp.com/";
@@ -27,10 +29,10 @@ class Weather extends React.Component {
   componentDidMount = () => {
     let currentComponent = this; //caching "this" to prevent from Error cannot setState of "undefined"!
 
-    function locInfo(pos)  { 
+    function locInfo(pos)  {
       //Getting LAT & LON using GeoLocation API embedded into html5
       let crd = pos.coords;
-      
+
       const lon = crd.longitude;
       const lat = crd.latitude;
 
@@ -69,7 +71,7 @@ class Weather extends React.Component {
               days: dailyData
             });
           });
-        
+
     }
     //error parameters for geolocation call
     function error(err) {
@@ -81,7 +83,7 @@ class Weather extends React.Component {
       timeout: 5000,
       maximumAge: 10000
     };
-    
+
     // GEOLOCATION API (HTML5)
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(locInfo, error, options);
@@ -89,6 +91,22 @@ class Weather extends React.Component {
   }
 
   render() {
+    const WeatherModal = () => {
+    const [Modal, open, close] = useModal('root');
+    return (
+    <div>
+      <button onClick={open}>OPEN</button>
+      <Modal>
+        <div className={styles.modal}>
+          <h1>Title</h1>
+          <p>This is a customizable modal.</p>
+          <button onClick={close}>CLOSE</button>
+        </div>
+      </Modal>
+    </div>
+    );
+    };
+
     let hour = new Date().getHours();
     let timeOfDay = hour > 17 ? "night" : "day";
 
@@ -106,22 +124,21 @@ class Weather extends React.Component {
       </div>
     );
 
-    return (
-      <div className="weatherData">
-        <div className="weatherWrapper">
-          <WeatherData
-            /* from IP.ZQ.CO */
-            town = {{town} ? town : {city}}
-            region={region}
-            /* from OpenWeatherMap API CALL */
-            temp={temp}
-            description={description}
-            id={id}
-            wind={wind}
-            humidity={humidity}
-          />
+    return(
+        <div className="weatherData">
+          <div className="weatherWrapper">
+            <WeatherData
+              /* from IP.ZQ.CO */
+              town = {{town} ? town : {city}}
+              region={region}
+              /* from OpenWeatherMap API CALL */
+              temp={temp}
+              description={description}
+              id={id}
+              wind={wind}
+              humidity={humidity}
+            />
 
-          {/* <WeatherForm /> */}
           <button className="weeklyBtn" onClick={() => this.setState({ showWeatherForecast: !showWeatherForecast }) } >
             <span role="img" aria-label="temp-emoji">
               Weekly 🌡️
@@ -130,6 +147,8 @@ class Weather extends React.Component {
 
           <br />
           <br />
+
+          <WeatherModal/>
 
           <div className="hook"></div>
           <div className="forecastWrapper">
