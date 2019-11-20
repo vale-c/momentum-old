@@ -1,8 +1,7 @@
 import axios from 'axios';
-import './Weather.css';
+import './Weather.scss';
 import React from 'react';
 import useModal from 'react-hooks-use-modal';
-// import styles from './styles.module.css';
 import WeatherCard from './WeatherCard';
 
 const PROXY = "https://cors-anywhere.herokuapp.com/";
@@ -94,20 +93,17 @@ class Weather extends React.Component {
     const WeatherModal = () => {
     const [Modal, open, close] = useModal('root');
     return (
-      <div>
+      <div className="weatherModal">
         <button className="weeklyBtn" onClick={open}>
           <span role="img" aria-label="temp-emoji">Weekly 🌡️</span>
         </button>
-
         <Modal>
           <div className="forecastWrapper">
               {this.state.days.map((day, index) => (
                   <WeatherCard day={day} key={index} />
               ))}
-
+          <button className="close-btn" onClick={close}></button>
           </div>
-
-          <button className="close-thick" onClick={close}></button>
         </Modal>
       </div>
     );
@@ -130,7 +126,7 @@ class Weather extends React.Component {
     );
 
     return(
-        <div className="weatherData">
+    
           <div className="weatherWrapper">
             <WeatherData
               /* from IP.ZQ.CO */
@@ -145,9 +141,7 @@ class Weather extends React.Component {
             />
 
           <WeatherModal/>
-
         </div>
-      </div>
     );
   }
 }

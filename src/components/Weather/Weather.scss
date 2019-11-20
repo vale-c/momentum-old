@@ -1,0 +1,110 @@
+@import url(http://fonts.googleapis.com/css?family=Fira+Mono:300italic,400italic,700italic,400,300,700);
+
+$coconut: #fff;
+$alert: red;
+$custom_font: 'Fira Mono', 'Helvetica', sans-serif;
+$pale_black: rgba(14, 15, 16, 0.93);
+$hover_hue: rgb(50, 50, 50);
+$no_color: transparent;
+
+.weatherWrapper {
+    font-family: $custom_font;
+    font-size: 1rem;
+    font-weight: 400;
+    position: absolute;
+    right: 1rem;
+    text-align: center;
+    top: 0;
+    text-shadow: rgb(50, 50, 50) 0px 0px 15px;
+
+    #icon {
+        color: $coconut;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        padding: 0.2em;
+    }
+
+    .weeklyBtn {
+        background: $no_color;
+        border: 1px solid #fff;
+        color: $coconut;
+        cursor: pointer;
+        padding: 5px 15px;
+        border-radius: 3px;
+        outline: none;
+
+        &:hover {
+            border: 1px solid #ffffff;
+            background: $hover_hue;
+        }
+    }    
+}
+//Display Weather Modal
+.forecastWrapper {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    font-size: 1.4rem;
+    font-family: $custom_font;
+    align-content: space-between;
+    background-color: $pale_black;
+    color: $coconut;
+    margin: 0;
+    top: 0;
+    //Single Day Weather Instance
+    .weatherCard {
+        display: flex;
+        flex-direction: column;
+        padding: 0.6rem;
+        text-align: center;
+        max-width: 100vw;
+
+        .weekDay {
+            margin-bottom: -15px;
+            text-align: center;
+        }
+        #icon {
+            color: $coconut;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            padding: 0.2em;
+        }
+        .min,
+        .max {
+            font-family: $custom_font;
+            margin: 0.3rem;
+            font-weight: 300;
+        }
+        .card-text {
+            margin-top: 0.3rem;
+        }
+    }
+    //Close Button on Weather Data Modal
+    .close-btn {
+        background-color: $no_color;
+        border: none;
+        color: $coconut;
+        font-family: $custom_font;
+        font-size: 1.4rem;
+        position: absolute;
+        right: 5px;
+        text-decoration: none;
+        text-shadow: 0 1px 0 $hover_hue;
+        top: 5px;
+        outline: none;
+        cursor: pointer;
+        &:after {
+            content: '✖';
+            /* UTF-8 symbol */
+        }
+        &:hover {
+            color: $alert;
+        }
+    }
+}
+
+
