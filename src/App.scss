@@ -17,7 +17,8 @@ html {
         align-items: center;
         justify-content: center;
         /* Let's center and scale the image nicely */
-        background: url('https://source.unsplash.com/1920x1080?nature,sky,water'), url('./img/overlay-vignette.png');
+        background: url('https://source.unsplash.com/1920x1080?nature,sky,water,mountain,city,abstract'),
+        url('./img/overlay-vignette.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

@@ -51,17 +51,14 @@ const nameData = {
 	"firstName": [
     "Honey",
     "Sweetheart",
-    "Kit Kat",
     "Mate",
     "Bro",
     "Wiz",
     "Cutie",
     "Alien",
     "Human",
-    "Sexy",
     "Angel",
     "Cutie Pie",
-    "Bae",
     "Sunshine",
     "Beautiful",
     "Good Looking",
@@ -83,7 +80,6 @@ const nameData = {
     "Captain",
     "Ace",
     "Sweetie",
-    "Ray Of Light",
     "Sunflower",
 	]}
 
