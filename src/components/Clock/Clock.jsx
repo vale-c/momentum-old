@@ -1,5 +1,5 @@
 import React from 'react';
-import './Clock.css';
+import './Clock.scss';
 import {Grid, Row, Col} from 'react-bootstrap';
 
 class Clock extends React.Component {

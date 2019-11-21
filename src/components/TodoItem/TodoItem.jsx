@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './TodoItem.css';
+import './TodoItem.scss';
 
 const btnStyle = {
     backgroundColor: "transparent",

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Quotes.css';
+import './Quotes.scss';
 import axios from 'axios';
 
 const momentumAppLink = "https://www.momentumdash.netlify.com";

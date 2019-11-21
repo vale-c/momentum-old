@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './AddTodo.css';
+import './AddTodo.scss';
 import PropTypes from 'prop-types'
 
 export class AddTodo extends Component {

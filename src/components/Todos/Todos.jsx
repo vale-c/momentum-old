@@ -1,7 +1,7 @@
 import React from 'react';
-import './Todos.css';
-import TodoItem from '../TodoItem/TodoItem';
-import AddTodo from '../AddTodo/AddTodo.js';
+import './Todos.scss';
+import TodoItem from '../TodoItem/TodoItem.jsx';
+import AddTodo from '../AddTodo/AddTodo.jsx';
 import PropTypes from 'prop-types';
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Greeting.css';
+import './Greeting.scss';
 import {Grid, Row, Col} from 'react-bootstrap';
 
 function getRandom(items) { //pick a random name from the nameData list at the bottom of the Greeting component

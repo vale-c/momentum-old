@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+
+    body {
+        background: #fff;
+        color: #fff;
+        min-height: 100%;
+        margin: 0;
+        /*hide scrollbar*/
+        overflow: hidden;
+        /*Positioning*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Let's center and scale the image nicely */
+        background: url('https://source.unsplash.com/1920x1080?nature,sky,water'), url('./img/overlay-vignette.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* Special Effects */
+        background-blend-mode: screen multiply;
+        backdrop-filter: saturate(275%) contrast(50%);
+        text-shadow: rgb(50, 50, 50) 0px 0px 10px;
+    }
+
+}
+

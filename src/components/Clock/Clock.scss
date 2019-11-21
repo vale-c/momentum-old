@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Anton:300,400&display=swap');
+
+.clockBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .clockHours,
+    .clockMinutes,
+    .clockAmOrPm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* fonts */
+        color: #fff;
+        font-family: 'Anton', sans-serif;
+        font-size: 4.2rem;
+        font-weight: 400;
+        letter-spacing: 0.5rem;
+        text-shadow: rgb(50, 50, 50) 0px 0px 10px;
+
+        .am-pm {
+            display: flex;
+            flex-flow: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 8rem;
+            letter-spacing: 0.3rem;
+            font-weight: 300;
+            margin-left: 0.6rem;
+        }
+    }
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .clockHours,
+    .clockMinutes,
+    .clockSeconds,
+    .clockAmOrPm {
+        font-size: 1.4rem;
+        margin-bottom: -30px;
+        .am-pm {
+            margin-top: 2.2rem;
+        }
+    }
+}

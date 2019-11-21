@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Clock from './components/Clock/Clock.js';
-import Weather from "./components/Weather/Weather.js";
-import Greeting from './components/Greeting/Greeting.js';
-import Quotes from './components/Quotes/Quotes.js';
-import Todos from './components/Todos/Todos.js';
+import Clock from './components/Clock/Clock.jsx';
+import Weather from "./components/Weather/Weather.jsx";
+import Greeting from './components/Greeting/Greeting.jsx';
+import Quotes from './components/Quotes/Quotes.jsx';
+import Todos from './components/Todos/Todos.jsx';
 import uuid from 'uuid';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   state = {

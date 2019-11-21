@@ -2,38 +2,44 @@
 
 .quoteContainer {
   margin: 0 auto;
+
+    .quoteWrapper {
+      position: fixed;
+      left: 50%;
+      bottom: 0px;
+      transform: translate(-50%, -3%);
+      /*font customization*/
+      color: rgba(255, 255, 255, .9);
+      line-height: 1.2;
+      font-family: 'Fira Mono', monospace;
+      font-size: 0.9em;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: rgb(50, 50, 50) 0px 0px 10px;
+
+      .text-author-name {
+        margin-top: -8px;
+      }
+
+      .refresh-btn {
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.6rem;
+        padding: 5px 15px;
+        margin-bottom: 0.8rem;
+        outline: none;
+      }
+  }
 }
 
-.quoteWrapper {
-  position: fixed;
-  left: 50%;
-  bottom: 0px;
-  transform: translate(-50%,-3%);
-/*font customization*/
-  color: rgba(255, 255, 255, .9);
-  line-height: 1.2;
-  font-family: 'Fira Mono', monospace;
-  font-size: 0.9em;
-  font-weight: 700;
-  text-align: center;
-  text-shadow: rgb(50, 50, 50) 0px 0px 10px;
-}
 
-p.text-author-name {
-  margin-top: -8px;
-}
 
-.refresh-btn {
-  background: transparent;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.6rem;
-  padding: 5px 15px;
-  margin-bottom: 0.8rem;
-  outline: none;
-}
+
+
+
 
 .refresh-btn:hover {
   background-color: rgb(50, 50, 50);

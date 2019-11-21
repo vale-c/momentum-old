@@ -5,9 +5,11 @@
     padding: 0.01rem;
     transition: opacity 0.5s ease;
     z-index: 999;
+
+    .todoItem {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
 }
 
-.todoItem {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
+
