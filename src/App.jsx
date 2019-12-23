@@ -10,20 +10,10 @@ import './App.scss';
 class App extends Component {
   state = {
     todos: [{
-    //   id: uuid.v4(),
-    //   title: 'Hey Human Friend 👁️🖖',
-    //   completed: false,
-    // },
-    //{
       id: uuid.v4(),
       title: 'Add here your todos! 📃🖊️',
       completed: false,
     },
-    // {
-    //   id: uuid.v4(),
-    //   title: 'It is a nice way to keep track of all the stuff you have to do.😉👍',
-    //   completed: false,
-    // }
     ],
   };
 
@@ -75,13 +65,13 @@ class App extends Component {
         <Weather />
         <Clock />
         <Greeting />
+        <Quotes />
         <Todos
           addTodo={this.addTodo}
           todos={this.state.todos}
           markComplete={this.markComplete}
           delTodo={this.delTodo}
         />
-        <Quotes />
       </div>
     );
   }

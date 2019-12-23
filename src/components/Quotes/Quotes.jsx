@@ -3,7 +3,7 @@ import './Quotes.scss';
 import axios from 'axios';
 
 const momentumAppLink = "https://www.momentumdash.netlify.com";
-const PROXY = "https://cors-anywhere.herokuapp.com/";
+//const PROXY = "https://cors-anywhere.herokuapp.com/";
 class Quotes extends React.Component {
   constructor(props) {
     super(props);
@@ -35,12 +35,13 @@ class Quotes extends React.Component {
 
   getQuote = () => {
     axios
-      .get(PROXY + "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
-      .then(response => {
+      .get("https://freequote.herokuapp.com/") 
+      .then(res => {
         this.setState({
-          quote: response.data.quoteText,
-          author: response.data.quoteAuthor
+          quote: res.data.quote,
+          author: res.data.author
         });
+        console.log(res);
       })
       .catch(error => {
         console.log(error);
