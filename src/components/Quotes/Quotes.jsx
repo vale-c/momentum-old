@@ -41,7 +41,7 @@ class Quotes extends React.Component {
           quote: res.data.quote,
           author: res.data.author
         });
-        console.log(res);
+        //console.log(res);
       })
       .catch(error => {
         console.log(error);
@@ -137,7 +137,7 @@ class Quotes extends React.Component {
           { (this.state.quote !== undefined || this.state.author!== undefined) ? (
             <QuoteText quote={quote} author={author} /> 
           ) : ( 
-            <QuoteText quote={"Uhm, no quotes for now 🤔...Try again in a few seconds!"} author = {"Vale"}/>
+            <QuoteText quote={"Uhm, no quotes for now 🤔...Try again in a moment!"} author = {"Vale"}/>
           )}
           
           {
