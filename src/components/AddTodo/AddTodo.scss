@@ -5,20 +5,18 @@
     background-color: rgba(15, 15, 15, 0.925);
     border: none;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: "Fira Mono", "Helvetica", sans-serif;
     font-weight: 400;
     height: 2.5rem;
     margin-right: -1rem;
     outline: none;
-    min-width: 360px;
-    padding: 20px;
+    padding: 50px;
     z-index: 999;
 }
 
-
 @media only screen and (max-width: 600px) {
     .newTodo {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 }

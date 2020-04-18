@@ -8,9 +8,10 @@ const btnStyle = {
     borderRadius: "50%",
     color: "#ff0000",
     cursor: "pointer",
-    fontSize: "1rem",
+    fontSize: "1.5rem",
+    fontWeight: "700",
     float: "none",
-    marginLeft: "5px"
+    marginLeft: "10px"
 };
 
 export class TodoItem extends Component {

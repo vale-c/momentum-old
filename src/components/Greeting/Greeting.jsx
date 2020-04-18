@@ -14,8 +14,8 @@ class Greeting extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount() {
-    this._randomAll()
+  componentDidMount() {
+    setInterval(this._randomAll(), 1000)
   }
 
   _randomAll() {
