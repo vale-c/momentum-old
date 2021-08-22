@@ -4,7 +4,6 @@ import React from 'react';
 import useModal from 'react-hooks-use-modal';
 import WeatherCard from './WeatherCard';
 
-const PROXY = "https://cors-anywhere.herokuapp.com/";
 const OW_API = "13b0886c7c035390785605fc1c637712";
 //const DarkSky_API = "930e15060e75d78b3b7cc44da030601c";
 
@@ -36,7 +35,7 @@ class Weather extends React.Component {
 
       axios
         .get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
-        // Geo Coord Info
+        // Geo Coordinates Info
         .then((res) => {
           currentComponent.setState({
             lat: res.data.lat,
@@ -47,7 +46,7 @@ class Weather extends React.Component {
             country: res.data.address.country
           });
           //current Weather Data
-          return axios.get(PROXY+`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${OW_API}`);
+          return axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${OW_API}`);
         })
         .then((response) => {
             currentComponent.setState({
@@ -58,7 +57,7 @@ class Weather extends React.Component {
               wind: response.data.wind.speed
             });
           //Weekly Weather Forecast Data
-          return fetch(PROXY + `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${OW_API}`);
+          return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${OW_API}`);
         })
         .then(res => res.json())
           .then(data => {
@@ -102,7 +101,7 @@ class Weather extends React.Component {
               {this.state.days.map((day, index) => (
                   <WeatherCard day={day} key={index} />
               ))}
-          <button className="close-btn" onClick={close}></button>
+          <button className="close-btn" onClick={close} />
           </div>
         </Modal>
       </div>
@@ -116,9 +115,9 @@ class Weather extends React.Component {
 
     const WeatherData = ({  town, city, region, temp, description, id, humidity }) => (
       <div>
-        <p className="locationType"> { {town} ? town : {city} } </p>
+        <p className="locationType"> { {town} ? (town) : {city} } </p>
         <p className="region-country">{region}</p>
-        <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id}></i>
+        <i id="icon" className={"wi wi-owm-" + timeOfDay + "-" + id} />
         <h3 className="desc">{description}</h3>
         <p className="temp">{Math.round(temp)}°</p>
         <p className="humidity">Humidity: {humidity}%</p>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Clock from './components/Clock/Clock.jsx';
 import Weather from "./components/Weather/Weather.jsx";
 import Greeting from './components/Greeting/Greeting.jsx';
-import Quotes from './components/Quotes/Quotes.jsx';
+import Quotes from './components/Quotes/index.jsx';
 import Todos from './components/Todos/Todos.jsx';
 import uuid from 'uuid';
 import './App.scss';

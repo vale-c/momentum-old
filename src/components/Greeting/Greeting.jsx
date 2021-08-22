@@ -1,10 +1,7 @@
 import React from 'react';
 import './Greeting.scss';
 import {Grid, Row, Col} from 'react-bootstrap';
-
-function getRandom(items) { //pick a random name from the nameData list at the bottom of the Greeting component
-  return items[items.length * Math.random() | 0];
-}
+import { getRandom } from '../../_utils'
 
 class Greeting extends React.Component {
 	constructor(props) {
@@ -37,13 +34,13 @@ class Greeting extends React.Component {
 
     let time = new Date().getHours(); //get precise time
 
-		return <Grid>
+		return (<Grid>
 			<Row className="greetingTextWrapper">
         <Col xs={6} md={3}>
           <h3 className="greetingText">Good {time < 12 ? 'Morning' : time < 18 ? 'Afternoon' : time < 22 ? 'Evening' : 'Night'} {firstName} </h3>
         </Col>
       </Row>
-		</Grid>;
+		</Grid>);
 	}
 }
 
